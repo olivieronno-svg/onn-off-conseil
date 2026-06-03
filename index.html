@@ -126,6 +126,10 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;height:7
 
 /* ===== PROCESS ===== */
 .process{padding:96px 0 90px}
+.sectors{padding:96px 0 10px}
+.tag-cloud{display:flex;flex-wrap:wrap;gap:12px;margin-top:8px}
+.tag-cloud span{font-family:var(--mono);font-size:.8rem;letter-spacing:.01em;padding:.7em 1.15em;border:1px solid var(--line);border-radius:40px;color:#3a3540;background:var(--paper);transition:border-color .25s,color .25s,transform .25s;cursor:default}
+.tag-cloud span:hover{border-color:var(--red);color:var(--red);transform:translateY(-2px)}
 .proc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--line);margin-top:46px}
 .step{padding:30px 26px 36px;border-right:1px solid var(--line)}
 .step:last-child{border-right:none}
@@ -140,10 +144,11 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;height:7
 .contact h2{font-family:var(--serif);font-weight:400;font-size:clamp(2.2rem,4.5vw,3.4rem);letter-spacing:-.01em;line-height:1.12;max-width:18ch;padding-bottom:.06em}
 .contact h2 em{font-style:italic;color:var(--red-bright)}
 .contact-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:60px;margin-top:50px;align-items:start}
-.coord{display:grid;gap:24px}
-.coord .row .k{font-family:var(--mono);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:#ef6b76;margin-bottom:5px}
-.coord .row .v{font-size:1.05rem;color:rgba(245,242,239,.92)}
-.coord .row .v.ph{color:rgba(245,242,239,.5)}
+.coord{display:block}
+.coord p{margin:0;line-height:1.65;font-size:1rem;color:rgba(245,242,239,.85)}
+.coord a{color:rgba(245,242,239,.92);border-bottom:1px solid #ef6b76}
+.coord .stamp-name{font-family:var(--serif);font-weight:600;font-size:1.3rem;color:var(--paper);margin-bottom:6px;line-height:1.3}
+.coord .stamp-siren{font-style:italic;color:rgba(245,242,239,.6);font-size:.92rem;margin-top:8px}
 .contact .cta-box{border:1px solid rgba(255,255,255,.16);border-radius:4px;padding:34px}
 .contact .cta-box p{color:rgba(245,242,239,.72);font-size:.96rem;margin-bottom:22px;font-weight:300}
 .contact-form{display:grid;gap:12px}
@@ -186,6 +191,7 @@ footer b{color:var(--paper);font-weight:500}
     <div class="nav-right">
       <div class="nav-links">
         <a href="#prestations">Prestations</a>
+        <a href="#secteurs">Secteurs</a>
         <a href="#demarche">Démarche</a>
         <a href="#contact" class="nav-cta">Me contacter</a>
       </div>
@@ -246,10 +252,37 @@ footer b{color:var(--paper);font-weight:500}
       <div class="svc"><div class="num">05</div><h3>Analyse &amp; management des risques</h3><p>Cartographie et criticité des risques, DUERP, plans de prévention, plans de continuité d'activité et procédures de gestion de crise.</p></div>
       <div class="svc"><div class="num">06</div><h3>Sécurité, sûreté &amp; sécurité incendie</h3><p>Mise en conformité ERP / IGH, audits de sûreté, consignes et procédures, accompagnement des équipes.</p></div>
       <div class="svc"><div class="num">07</div><h3>Expertises &amp; accompagnement</h3><p>Appui d'expert ponctuel ou dans la durée, avis technique, contre-expertise et accompagnement des mises en conformité.</p></div>
+      <div class="svc"><div class="num">08</div><h3>Veille &amp; conformité réglementaire</h3><p>Suivi des évolutions normatives, anticipation des obligations et mise à jour de vos documents réglementaires.</p></div>
+      <div class="svc"><div class="num">09</div><h3>Accompagnement des exploitants ERP / IGH</h3><p>Registre de sécurité, préparation des commissions de sécurité, suivi et levée des prescriptions.</p></div>
+      <div class="svc"><div class="num">10</div><h3>Sensibilisation &amp; accompagnement des équipes</h3><p>Montée en compétence de vos équipes sur la prévention des risques et la sécurité au quotidien.</p></div>
+      <div class="svc"><div class="num">11</div><h3>Organisation, procédures &amp; qualité</h3><p>Structuration des process, rédaction de procédures et démarche d'amélioration continue.</p></div>
       <div class="svc" style="display:flex;flex-direction:column;justify-content:center">
         <div class="num">→</div><h3 style="font-family:var(--sans);font-weight:500;font-size:1.1rem">Un besoin hors cadre&nbsp;?</h3>
         <p>Chaque mission est cadrée sur-mesure. <a href="#contact" style="color:var(--red);border-bottom:1px solid var(--red)">Parlons-en →</a></p>
       </div>
+    </div>
+  </div>
+</section>
+
+<section class="sectors" id="secteurs">
+  <div class="wrap reveal">
+    <div class="sec-head">
+      <h2>Secteurs d'intervention</h2>
+      <p>Une expertise mobilisable aussi bien dans le secteur public que privé.</p>
+    </div>
+    <div class="tag-cloud">
+      <span>Établissements recevant du public (ERP)</span>
+      <span>Immeubles de grande hauteur (IGH)</span>
+      <span>Collectivités &amp; secteur public</span>
+      <span>Bailleurs sociaux</span>
+      <span>Copropriétés &amp; syndics</span>
+      <span>Hôtellerie &amp; restauration</span>
+      <span>EHPAD &amp; médico-social</span>
+      <span>Établissements scolaires</span>
+      <span>Commerces &amp; centres commerciaux</span>
+      <span>Sites industriels</span>
+      <span>Logistique &amp; entrepôts</span>
+      <span>Tertiaire &amp; bureaux</span>
     </div>
   </div>
 </section>
@@ -275,11 +308,12 @@ footer b{color:var(--paper);font-weight:500}
     <h2>Parlons de votre <em>projet</em>.</h2>
     <div class="contact-grid">
       <div class="coord">
-        <div class="row"><div class="k">Entreprise</div><div class="v">Onn·Off Ingénierie &amp; Conseil</div></div>
-        <div class="row"><div class="k">Adresse</div><div class="v">537 Chemin Rural 3 de Béziers à Lieuran-Ribaute<br>34500 Béziers, France</div></div>
-        <div class="row"><div class="k">Téléphone</div><div class="v"><a href="tel:+33658522026" style="color:rgba(245,242,239,.92);border-bottom:1px solid #ef6b76">06 58 52 20 26</a></div></div>
-        <div class="row"><div class="k">Email</div><div class="v"><a href="mailto:f.onno@onn-offingénierie.fr?subject=Demande via le site Onn-Off" style="color:rgba(245,242,239,.92);border-bottom:1px solid #ef6b76">f.onno@onn-offingénierie.fr</a></div></div>
-        <div class="row"><div class="k">SIREN</div><div class="v">804 574 218</div></div>
+        <p class="stamp-name">Onn·Off Ingénierie &amp; Conseil</p>
+        <p>537 Chemin Rural 3</p>
+        <p>34500 Béziers, France</p>
+        <p><a href="tel:+33658522026">06 58 52 20 26</a></p>
+        <p><a href="mailto:f.onno@onn-offingénierie.fr?subject=Demande via le site Onn-Off">f.onno@onn-offingénierie.fr</a></p>
+        <p class="stamp-siren">SIREN 804 574 218</p>
       </div>
       <div class="cta-box">
         <p>Décrivez votre besoin, je reviens vers vous rapidement.</p>
