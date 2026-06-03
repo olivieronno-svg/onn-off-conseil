@@ -58,14 +58,15 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;height:7
 .hero{position:relative;background:var(--ink);color:var(--paper);overflow:hidden}
 .hero::before{content:"";position:absolute;inset:0;
   background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);
-  background-size:46px 46px;mask-image:radial-gradient(ellipse 80% 80% at 75% 35%,#000 40%,transparent 100%)}
-.hero::after{content:"";position:absolute;top:-15%;right:-8%;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle,rgba(214,37,52,.22),transparent 64%);filter:blur(8px)}
+  background-size:46px 46px;mask-image:radial-gradient(ellipse 150% 130% at 50% 32%,#000 60%,transparent 100%)}
+.hero::after{content:"";position:absolute;top:-15%;right:-8%;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle,rgba(214,37,52,.20),transparent 64%);filter:blur(8px)}
+.hero-glow2{position:absolute;bottom:-25%;left:-10%;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(214,37,52,.12),transparent 66%);filter:blur(10px);z-index:1}
 .hero .wrap{position:relative;z-index:2;display:block;padding:104px 32px 110px}
 .hero .eyebrow{color:#ef6b76}
 .hero .eyebrow::before{background:#ef6b76}
-.hero h1{font-family:var(--serif);font-weight:500;font-size:clamp(2.6rem,5.4vw,4.6rem);line-height:1.1;letter-spacing:-.015em;margin:24px 0 0;max-width:15ch;padding-bottom:.05em}
+.hero h1{font-family:var(--serif);font-weight:500;font-size:clamp(2.6rem,5.4vw,4.6rem);line-height:1.1;letter-spacing:-.015em;margin:24px 0 0;max-width:20ch;padding-bottom:.05em}
 .hero h1 em{font-style:italic;color:var(--paper)}
-.hero p.lead{font-size:1.1rem;color:rgba(245,242,239,.74);max-width:50ch;margin-top:28px;font-weight:300}
+.hero p.lead{font-size:1.1rem;color:rgba(245,242,239,.74);max-width:60ch;margin-top:28px;font-weight:300}
 .hero-actions{display:flex;gap:16px;margin-top:40px;flex-wrap:wrap}
 .hero-medallion{display:flex;justify-content:center}
 .hero-medallion img{width:min(28vw,240px);aspect-ratio:1;border-radius:50%;object-fit:cover;
@@ -143,6 +144,12 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;height:7
 .coord .row .v.ph{color:rgba(245,242,239,.5)}
 .contact .cta-box{border:1px solid rgba(255,255,255,.16);border-radius:4px;padding:34px}
 .contact .cta-box p{color:rgba(245,242,239,.72);font-size:.96rem;margin-bottom:22px;font-weight:300}
+.contact-form{display:grid;gap:12px}
+.contact-form input,.contact-form textarea{width:100%;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.18);border-radius:3px;padding:.8em 1em;color:var(--paper);font-family:var(--sans);font-size:.95rem;transition:border-color .2s}
+.contact-form input::placeholder,.contact-form textarea::placeholder{color:rgba(245,242,239,.45)}
+.contact-form input:focus,.contact-form textarea:focus{outline:none;border-color:var(--red-bright)}
+.contact-form textarea{resize:vertical}
+.contact-form button{margin-top:6px;border:none;font-family:var(--mono)}
 
 footer{background:var(--ink);color:rgba(245,242,239,.55);border-top:1px solid rgba(255,255,255,.1)}
 footer .wrap{display:flex;justify-content:space-between;align-items:center;padding:30px 32px;flex-wrap:wrap;gap:16px;font-family:var(--mono);font-size:.74rem;letter-spacing:.04em}
@@ -188,6 +195,7 @@ footer b{color:var(--paper);font-weight:500}
 </nav>
 
 <header class="hero" id="top">
+  <div class="hero-glow2"></div>
   <div class="wrap">
     <div>
       <span class="eyebrow">Audit · Conseil · Sécurité — Béziers</span>
@@ -272,8 +280,15 @@ footer b{color:var(--paper);font-weight:500}
         <div class="row"><div class="k">SIREN</div><div class="v">804 574 218</div></div>
       </div>
       <div class="cta-box">
-        <p>Un projet, une mise en conformité ou simplement une question&nbsp;? Décrivez votre besoin, je reviens vers vous rapidement.</p>
-        <a href="mailto:f.onno@onn-offingénierie.fr?subject=Demande via le site Onn-Off" class="btn btn-primary" style="width:100%;justify-content:center">Envoyer un email →</a>
+        <p>Décrivez votre besoin, je reviens vers vous rapidement.</p>
+        <form class="contact-form" action="https://formspree.io/f/mvznpwqj" method="POST">
+          <input type="text" name="name" placeholder="Votre nom" required>
+          <input type="email" name="email" placeholder="Votre email" required>
+          <textarea name="message" rows="4" placeholder="Votre message" required></textarea>
+          <input type="hidden" name="_subject" value="Nouveau message via le site Onn-Off">
+          <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center">Envoyer le message →</button>
+        </form>
+        <p style="margin-top:18px;margin-bottom:0;font-size:.85rem">Ou directement&nbsp;: <a href="mailto:f.onno@onn-offingénierie.fr?subject=Demande via le site Onn-Off" style="color:#ef6b76;border-bottom:1px solid #ef6b76">f.onno@onn-offingénierie.fr</a></p>
       </div>
     </div>
   </div>
