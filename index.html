@@ -89,6 +89,15 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;height:7
 
 /* ===== INTRO ===== */
 .intro{padding:110px 0 30px}
+/* ===== FONDS PHOTO DES SECTIONS (voile clair : les cartes restent unies) ===== */
+.bgp{background-size:cover;background-position:center}
+.bgp-equipe{background-image:linear-gradient(rgba(245,242,239,.93),rgba(245,242,239,.93)),url('img/bg-equipe.webp')}
+.bgp-veille{background-image:linear-gradient(rgba(245,242,239,.93),rgba(245,242,239,.93)),url('img/bg-veille.webp')}
+.bgp-prestations{background-image:linear-gradient(rgba(245,242,239,.93),rgba(245,242,239,.93)),url('img/bg-prestations.webp')}
+.bgp-incendie{background-image:linear-gradient(rgba(245,242,239,.93),rgba(245,242,239,.93)),url('img/bg-incendie.webp')}
+.bgp-qualite{background-image:linear-gradient(rgba(245,242,239,.93),rgba(245,242,239,.93)),url('img/bg-qualite.webp')}
+.bgp-registre{background-image:linear-gradient(rgba(234,228,222,.94),rgba(234,228,222,.94)),url('img/bg-registre.webp')}
+.contact.bgp-risques{background-image:linear-gradient(rgba(27,23,27,.93),rgba(27,23,27,.93)),url('img/bg-risques.webp');background-size:cover;background-position:center}
 .intro-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:70px;align-items:start}
 .intro h2{font-family:var(--serif);font-weight:400;font-size:clamp(1.8rem,3.4vw,2.7rem);line-height:1.26;letter-spacing:-.01em;padding-bottom:.06em}
 .intro .body p{color:#3a3540;font-size:1.06rem;margin-bottom:18px}
@@ -225,7 +234,7 @@ footer b{color:var(--paper);font-weight:500}
   </div>
 </header>
 
-<section class="intro">
+<section class="intro bgp bgp-equipe">
   <div class="wrap intro-grid reveal">
     <div>
       <span class="eyebrow">Positionnement</span>
@@ -238,7 +247,7 @@ footer b{color:var(--paper);font-weight:500}
   </div>
 </section>
 
-<section class="logiciel" id="logiciel" style="padding:90px 0 40px">
+<section class="logiciel bgp bgp-veille" id="logiciel" style="padding:90px 0 40px">
   <div class="wrap">
     <div class="sec-head">
       <span class="eyebrow">Notre logiciel</span>
@@ -276,7 +285,7 @@ footer b{color:var(--paper);font-weight:500}
   </div>
 </section>
 
-<section class="services" id="prestations">
+<section class="services bgp bgp-prestations" id="prestations">
   <div class="wrap">
     <div class="sec-head reveal">
       <h2>Prestations</h2>
@@ -302,7 +311,7 @@ footer b{color:var(--paper);font-weight:500}
   </div>
 </section>
 
-<section class="sectors" id="secteurs">
+<section class="sectors bgp bgp-incendie" id="secteurs">
   <div class="wrap reveal">
     <div class="sec-head">
       <h2>Secteurs d'intervention</h2>
@@ -325,7 +334,7 @@ footer b{color:var(--paper);font-weight:500}
   </div>
 </section>
 
-<section class="process" id="demarche">
+<section class="process bgp bgp-qualite" id="demarche">
   <div class="wrap">
     <div class="sec-head reveal">
       <h2>Ma démarche</h2>
@@ -340,7 +349,7 @@ footer b{color:var(--paper);font-weight:500}
   </div>
 </section>
 
-<section class="contact" id="contact">
+<section class="contact bgp-risques" id="contact">
   <div class="wrap reveal">
     <span class="eyebrow" style="color:#ef6b76">Contact</span>
     <h2>Parlons de votre <em>projet</em>.</h2>
@@ -370,7 +379,7 @@ footer b{color:var(--paper);font-weight:500}
 </section>
 
 <!-- ===== MENTIONS LÉGALES ===== -->
-<section id="mentions-legales" style="background:var(--paper-2);border-top:1px solid var(--line)">
+<section id="mentions-legales" class="bgp bgp-registre" style="border-top:1px solid var(--line)">
   <div class="wrap" style="padding:56px 32px">
     <p class="eyebrow">Mentions légales</p>
     <div style="margin-top:18px;display:grid;gap:22px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));font-size:.88rem;color:var(--muted)">
