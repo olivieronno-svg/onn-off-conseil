@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ingenierie.onn-off.fr/sitemap.xml
