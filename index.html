@@ -89,14 +89,19 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;height:7
 
 /* ===== INTRO ===== */
 .intro{padding:110px 0 30px}
-/* ===== FONDS PHOTO DES SECTIONS (voile clair : les cartes restent unies) ===== */
-.bgp{background-size:cover;background-position:center}
-.bgp-equipe{background-image:linear-gradient(rgba(245,242,239,.8),rgba(245,242,239,.8)),url('img/bg-equipe.webp')}
-.bgp-veille{background-image:linear-gradient(rgba(245,242,239,.8),rgba(245,242,239,.8)),url('img/bg-veille.webp')}
-.bgp-prestations{background-image:linear-gradient(rgba(245,242,239,.8),rgba(245,242,239,.8)),url('img/bg-prestations.webp')}
-.bgp-incendie{background-image:linear-gradient(rgba(245,242,239,.8),rgba(245,242,239,.8)),url('img/bg-incendie.webp')}
-.bgp-qualite{background-image:linear-gradient(rgba(245,242,239,.8),rgba(245,242,239,.8)),url('img/bg-qualite.webp')}
-.bgp-registre{background-image:linear-gradient(rgba(234,228,222,.85),rgba(234,228,222,.85)),url('img/bg-registre.webp')}
+/* ===== CARROUSEL PLEIN SITE (photos en fond, fondu + zoom lent, voile clair) ===== */
+html{background:var(--paper)}
+body{background:transparent}
+.site-bg{position:fixed;inset:0;z-index:-2;overflow:hidden;pointer-events:none}
+.site-bg__slide{position:absolute;inset:0;background-size:cover;background-position:center;
+  opacity:0;transition:opacity 2.2s ease-in-out;
+  transform:scale(1.0);animation:bgZoom 30s ease-in-out infinite alternate}
+.site-bg__slide.is-active{opacity:1}
+@keyframes bgZoom{from{transform:scale(1.0)}to{transform:scale(1.045)}}
+.site-veil{position:fixed;inset:0;z-index:-1;pointer-events:none;
+  background:linear-gradient(180deg,rgba(245,242,239,.88),rgba(245,242,239,.78) 45%,rgba(245,242,239,.88))}
+@media(prefers-reduced-motion:reduce){.site-bg__slide{animation:none;transform:none}}
+/* la zone contact garde son fond photo dédié (validé) */
 .contact.bgp-risques{background-image:linear-gradient(rgba(27,23,27,.84),rgba(27,23,27,.84)),url('img/bg-risques.webp');background-size:cover;background-position:center}
 .intro-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:70px;align-items:start}
 .intro h2{font-family:var(--serif);font-weight:400;font-size:clamp(1.8rem,3.4vw,2.7rem);line-height:1.26;letter-spacing:-.01em;padding-bottom:.06em}
@@ -190,6 +195,16 @@ footer b{color:var(--paper);font-weight:500}
 </style>
 </head>
 <body>
+<!-- Carrousel de fond plein site : les 6 photos defilent en fondu -->
+<div class="site-bg" aria-hidden="true">
+  <div class="site-bg__slide is-active" style="background-image:url('img/bg-equipe.webp')"></div>
+  <div class="site-bg__slide" style="background-image:url('img/bg-prestations.webp')"></div>
+  <div class="site-bg__slide" style="background-image:url('img/bg-incendie.webp')"></div>
+  <div class="site-bg__slide" style="background-image:url('img/bg-qualite.webp')"></div>
+  <div class="site-bg__slide" style="background-image:url('img/bg-veille.webp')"></div>
+  <div class="site-bg__slide" style="background-image:url('img/bg-registre.webp')"></div>
+</div>
+<div class="site-veil" aria-hidden="true"></div>
 
 <nav>
   <div class="wrap">
@@ -234,7 +249,7 @@ footer b{color:var(--paper);font-weight:500}
   </div>
 </header>
 
-<section class="intro bgp bgp-equipe">
+<section class="intro">
   <div class="wrap intro-grid reveal">
     <div>
       <span class="eyebrow">Positionnement</span>
@@ -247,7 +262,7 @@ footer b{color:var(--paper);font-weight:500}
   </div>
 </section>
 
-<section class="logiciel bgp bgp-veille" id="logiciel" style="padding:90px 0 40px">
+<section class="logiciel" id="logiciel" style="padding:90px 0 40px">
   <div class="wrap">
     <div class="sec-head">
       <span class="eyebrow">Notre logiciel</span>
@@ -285,7 +300,7 @@ footer b{color:var(--paper);font-weight:500}
   </div>
 </section>
 
-<section class="services bgp bgp-prestations" id="prestations">
+<section class="services" id="prestations">
   <div class="wrap">
     <div class="sec-head reveal">
       <h2>Prestations</h2>
@@ -311,7 +326,7 @@ footer b{color:var(--paper);font-weight:500}
   </div>
 </section>
 
-<section class="sectors bgp bgp-incendie" id="secteurs">
+<section class="sectors" id="secteurs">
   <div class="wrap reveal">
     <div class="sec-head">
       <h2>Secteurs d'intervention</h2>
@@ -334,7 +349,7 @@ footer b{color:var(--paper);font-weight:500}
   </div>
 </section>
 
-<section class="process bgp bgp-qualite" id="demarche">
+<section class="process" id="demarche">
   <div class="wrap">
     <div class="sec-head reveal">
       <h2>Ma démarche</h2>
@@ -379,7 +394,7 @@ footer b{color:var(--paper);font-weight:500}
 </section>
 
 <!-- ===== MENTIONS LÉGALES ===== -->
-<section id="mentions-legales" class="bgp bgp-registre" style="border-top:1px solid var(--line)">
+<section id="mentions-legales" style="background:var(--paper-2);border-top:1px solid var(--line)">
   <div class="wrap" style="padding:56px 32px">
     <p class="eyebrow">Mentions légales</p>
     <div style="margin-top:18px;display:grid;gap:22px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));font-size:.88rem;color:var(--muted)">
@@ -416,6 +431,18 @@ const obs=new IntersectionObserver((entries)=>{
   entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target)}});
 },{threshold:.12});
 document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+
+// Carrousel de fond : rotation douce des photos
+(function(){
+  const slides=document.querySelectorAll('.site-bg__slide');
+  if(slides.length<2) return;
+  let i=0;
+  setInterval(()=>{
+    slides[i].classList.remove('is-active');
+    i=(i+1)%slides.length;
+    slides[i].classList.add('is-active');
+  },6000);
+})();
 </script>
 </body>
 </html>
