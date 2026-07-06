@@ -103,6 +103,16 @@ body{background:transparent}
 @media(prefers-reduced-motion:reduce){.site-bg__slide{animation:none;transform:none}}
 /* la zone contact garde son fond photo dédié (validé) */
 .contact.bgp-risques{background-image:linear-gradient(rgba(27,23,27,.84),rgba(27,23,27,.84)),url('img/bg-risques.webp');background-size:cover;background-position:center}
+/* ===== tuiles prestations cliquables (accordéon) ===== */
+.svc.clickable{cursor:pointer}
+.svc .plus{position:absolute;top:30px;right:28px;font-family:var(--mono);font-size:1.25rem;color:var(--red);transition:transform .3s ease;line-height:1}
+.svc.open .plus{transform:rotate(45deg)}
+.svc .svc-more{max-height:0;overflow:hidden;transition:max-height .5s ease}
+.svc.open .svc-more{max-height:480px}
+.svc-more ul{margin:16px 0 0;padding-left:1.15em;color:#3a3540;font-size:.94rem;line-height:1.55}
+.svc-more li{margin-bottom:.45em}
+.svc-more li::marker{color:var(--red)}
+.svc-more .svc-cta{display:inline-block;margin-top:14px;font-family:var(--mono);font-size:.8rem;letter-spacing:.05em;color:var(--red);border-bottom:1px solid var(--red)}
 .intro-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:70px;align-items:start}
 .intro h2{font-family:var(--serif);font-weight:400;font-size:clamp(1.8rem,3.4vw,2.7rem);line-height:1.26;letter-spacing:-.01em;padding-bottom:.06em}
 .intro .body p{color:#3a3540;font-size:1.06rem;margin-bottom:18px}
@@ -307,17 +317,17 @@ footer b{color:var(--paper);font-weight:500}
       <p>Sept domaines d'intervention, du conseil ponctuel à l'accompagnement de projet dans la durée.</p>
     </div>
     <div class="svc-grid reveal">
-      <div class="svc"><div class="num">01</div><h3>Ingénierie &amp; études techniques</h3><p>Conception, dimensionnement et formalisation : cahiers des charges, notes techniques, analyses fonctionnelles et comparatifs de solutions.</p></div>
-      <div class="svc"><div class="num">02</div><h3>Assistance à maîtrise d'ouvrage</h3><p>Votre bras droit technique : rédaction du programme, choix des prestataires, contrôle de conformité et interface avec la maîtrise d'œuvre.</p></div>
-      <div class="svc"><div class="num">03</div><h3>Conseil &amp; audit</h3><p>Diagnostics, audits de conformité réglementaire et organisationnelle, rapports d'expertise assortis d'un plan d'actions priorisé.</p></div>
-      <div class="svc"><div class="num">04</div><h3>Pilotage &amp; coordination de projets</h3><p>Chef de projet externalisé : planning, budget, coordination des intervenants, reporting et gestion des points de blocage.</p></div>
-      <div class="svc"><div class="num">05</div><h3>Analyse &amp; management des risques</h3><p>Cartographie et criticité des risques, DUERP, plans de prévention, plans de continuité d'activité et procédures de gestion de crise.</p></div>
-      <div class="svc"><div class="num">06</div><h3>Sécurité, sûreté &amp; sécurité incendie</h3><p>Mise en conformité ERP / IGH, audits de sûreté, consignes et procédures, accompagnement des équipes.</p></div>
-      <div class="svc"><div class="num">07</div><h3>Expertises &amp; accompagnement</h3><p>Appui d'expert ponctuel ou dans la durée, avis technique, contre-expertise et accompagnement des mises en conformité.</p></div>
-      <div class="svc"><div class="num">08</div><h3>Veille &amp; conformité réglementaire</h3><p>Suivi des évolutions normatives, anticipation des obligations et mise à jour de vos documents réglementaires.</p></div>
-      <div class="svc"><div class="num">09</div><h3>Accompagnement des exploitants ERP / IGH</h3><p>Registre de sécurité, préparation des commissions de sécurité, suivi et levée des prescriptions.</p></div>
-      <div class="svc"><div class="num">10</div><h3>Sensibilisation &amp; accompagnement des équipes</h3><p>Montée en compétence de vos équipes sur la prévention des risques et la sécurité au quotidien.</p></div>
-      <div class="svc"><div class="num">11</div><h3>Organisation, procédures &amp; qualité</h3><p>Structuration des process, rédaction de procédures et démarche d'amélioration continue.</p></div>
+      <div class="svc"><div class="num">01</div><h3>Ingénierie &amp; études techniques</h3><p>Conception, dimensionnement et formalisation : cahiers des charges, notes techniques, analyses fonctionnelles et comparatifs de solutions.</p><span class="plus">+</span><div class="svc-more"><ul><li>Cahier des charges fonctionnel et technique</li><li>Notes techniques et dimensionnement</li><li>Études comparatives de solutions (technique / coût / délai)</li><li>Dossiers de consultation des entreprises (DCE)</li><li>Suivi et validation des études d'exécution</li></ul><a class="svc-cta" href="#contact" onclick="event.stopPropagation()">Parlons-en →</a></div></div>
+      <div class="svc"><div class="num">02</div><h3>Assistance à maîtrise d'ouvrage</h3><p>Votre bras droit technique : rédaction du programme, choix des prestataires, contrôle de conformité et interface avec la maîtrise d'œuvre.</p><span class="plus">+</span><div class="svc-more"><ul><li>Définition du besoin et rédaction du programme</li><li>Analyse des offres et aide au choix des prestataires</li><li>Suivi de la conception et des travaux côté maître d'ouvrage</li><li>Contrôle de conformité aux exigences du programme</li><li>Assistance à la réception : OPR et levée des réserves</li></ul><a class="svc-cta" href="#contact" onclick="event.stopPropagation()">Parlons-en →</a></div></div>
+      <div class="svc"><div class="num">03</div><h3>Conseil &amp; audit</h3><p>Diagnostics, audits de conformité réglementaire et organisationnelle, rapports d'expertise assortis d'un plan d'actions priorisé.</p><span class="plus">+</span><div class="svc-more"><ul><li>Audit documentaire et visite de terrain</li><li>Évaluation de la conformité réglementaire et organisationnelle</li><li>Rapport d'expertise illustré et hiérarchisé</li><li>Plan d'actions priorisé, du quick-win au long terme</li><li>Restitution et accompagnement de la mise en œuvre</li></ul><a class="svc-cta" href="#contact" onclick="event.stopPropagation()">Parlons-en →</a></div></div>
+      <div class="svc"><div class="num">04</div><h3>Pilotage &amp; coordination de projets</h3><p>Chef de projet externalisé : planning, budget, coordination des intervenants, reporting et gestion des points de blocage.</p><span class="plus">+</span><div class="svc-more"><ul><li>Cadrage : périmètre, jalons, budget</li><li>Planification et tableaux de bord de suivi</li><li>Animation des réunions et coordination des intervenants</li><li>Anticipation des risques projet et déblocage des points durs</li><li>Reporting clair et régulier à la direction</li></ul><a class="svc-cta" href="#contact" onclick="event.stopPropagation()">Parlons-en →</a></div></div>
+      <div class="svc"><div class="num">05</div><h3>Analyse &amp; management des risques</h3><p>Cartographie et criticité des risques, DUERP, plans de prévention, plans de continuité d'activité et procédures de gestion de crise.</p><span class="plus">+</span><div class="svc-more"><ul><li>Identification et cartographie des risques</li><li>Cotation de la criticité (probabilité × gravité)</li><li>DUERP et plans de prévention</li><li>Plan de continuité d'activité (PCA)</li><li>Procédures de gestion de crise et exercices associés</li></ul><a class="svc-cta" href="#contact" onclick="event.stopPropagation()">Parlons-en →</a></div></div>
+      <div class="svc"><div class="num">06</div><h3>Sécurité, sûreté &amp; sécurité incendie</h3><p>Mise en conformité ERP / IGH, audits de sûreté, consignes et procédures, accompagnement des équipes.</p><span class="plus">+</span><div class="svc-more"><ul><li>Diagnostics de conformité ERP / IGH / Code du travail</li><li>Audits de sûreté et prévention de la malveillance</li><li>Consignes, plans et procédures de sécurité</li><li>Préparation et suivi des commissions de sécurité</li><li>Accompagnement et sensibilisation des équipes</li></ul><a class="svc-cta" href="#contact" onclick="event.stopPropagation()">Parlons-en →</a></div></div>
+      <div class="svc"><div class="num">07</div><h3>Expertises &amp; accompagnement</h3><p>Appui d'expert ponctuel ou dans la durée, avis technique, contre-expertise et accompagnement des mises en conformité.</p><span class="plus">+</span><div class="svc-more"><ul><li>Avis technique indépendant et argumenté</li><li>Contre-expertise sur dossier ou sur site</li><li>Appui dans les échanges avec bureaux de contrôle, assureurs, administrations</li><li>Accompagnement des mises en conformité jusqu'à la levée</li><li>Intervention ponctuelle ou dans la durée, selon le besoin</li></ul><a class="svc-cta" href="#contact" onclick="event.stopPropagation()">Parlons-en →</a></div></div>
+      <div class="svc"><div class="num">08</div><h3>Veille &amp; conformité réglementaire</h3><p>Suivi des évolutions normatives, anticipation des obligations et mise à jour de vos documents réglementaires.</p><span class="plus">+</span><div class="svc-more"><ul><li>Veille normative et réglementaire ciblée sur votre activité</li><li>Notes d'impact : ce qui change concrètement pour vous</li><li>Mise à jour de vos documents réglementaires</li><li>Échéancier de vos obligations périodiques</li><li>Alertes en cas d'évolution majeure</li></ul><a class="svc-cta" href="#contact" onclick="event.stopPropagation()">Parlons-en →</a></div></div>
+      <div class="svc"><div class="num">09</div><h3>Accompagnement des exploitants ERP / IGH</h3><p>Registre de sécurité, préparation des commissions de sécurité, suivi et levée des prescriptions.</p><span class="plus">+</span><div class="svc-more"><ul><li>Tenue et mise à jour du registre de sécurité</li><li>Préparation des commissions : dossier complet et visite à blanc</li><li>Suivi et levée des prescriptions</li><li>Planification des vérifications périodiques obligatoires</li><li>Interface avec bureaux de contrôle et organismes agréés</li></ul><a class="svc-cta" href="#contact" onclick="event.stopPropagation()">Parlons-en →</a></div></div>
+      <div class="svc"><div class="num">10</div><h3>Sensibilisation &amp; accompagnement des équipes</h3><p>Montée en compétence de vos équipes sur la prévention des risques et la sécurité au quotidien.</p><span class="plus">+</span><div class="svc-more"><ul><li>Ateliers de prévention adaptés à vos métiers</li><li>Sensibilisation incendie et évacuation</li><li>Développement d'une culture sécurité au quotidien</li><li>Supports pédagogiques sur-mesure</li><li>Accompagnement spécifique de l'encadrement</li></ul><a class="svc-cta" href="#contact" onclick="event.stopPropagation()">Parlons-en →</a></div></div>
+      <div class="svc"><div class="num">11</div><h3>Organisation, procédures &amp; qualité</h3><p>Structuration des process, rédaction de procédures et démarche d'amélioration continue.</p><span class="plus">+</span><div class="svc-more"><ul><li>Cartographie de vos processus</li><li>Rédaction de procédures et modes opératoires</li><li>Indicateurs et tableaux de bord</li><li>Démarche d'amélioration continue (PDCA)</li><li>Préparation aux audits et certifications</li></ul><a class="svc-cta" href="#contact" onclick="event.stopPropagation()">Parlons-en →</a></div></div>
       <div class="svc" style="display:flex;flex-direction:column;justify-content:center">
         <div class="num">→</div><h3 style="font-family:var(--sans);font-weight:500;font-size:1.1rem">Un besoin hors cadre&nbsp;?</h3>
         <p>Chaque mission est cadrée sur-mesure. <a href="#contact" style="color:var(--red);border-bottom:1px solid var(--red)">Parlons-en →</a></p>
@@ -442,6 +452,25 @@ document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
     i=(i+1)%slides.length;
     slides[i].classList.add('is-active');
   },6000);
+})();
+
+// Tuiles prestations : clic pour deplier le detail
+(function(){
+  document.querySelectorAll('.svc').forEach(function(el){
+    if(!el.querySelector('.svc-more')) return;
+    el.classList.add('clickable');
+    el.setAttribute('role','button');
+    el.setAttribute('aria-expanded','false');
+    el.tabIndex = 0;
+    function toggle(){
+      var open = el.classList.toggle('open');
+      el.setAttribute('aria-expanded', open ? 'true' : 'false');
+    }
+    el.addEventListener('click', toggle);
+    el.addEventListener('keydown', function(e){
+      if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); toggle(); }
+    });
+  });
 })();
 </script>
 </body>
