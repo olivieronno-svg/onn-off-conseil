@@ -206,6 +206,11 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;paddi
 footer b{color:var(--paper);font-weight:500}
 
 /* --- Formules ONNOFF Expert --- */
+.inclus-bandeau{border:1px solid var(--line);border-left:3px solid var(--red);border-radius:6px;background:var(--paper-2);padding:28px 32px;margin-bottom:34px}
+.inclus-bandeau h3{font-family:var(--serif);font-weight:500;font-size:1.25rem;margin:0 0 16px}
+.inclus-bandeau ul{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:11px 30px}
+.inclus-bandeau li{position:relative;padding-left:20px;font-size:.92rem;color:var(--ink-soft);line-height:1.5}
+.inclus-bandeau li::before{content:"¹3";position:absolute;left:0;color:var(--red);font-weight:700}
 .periode-switch{display:inline-flex;border:1px solid var(--line);border-radius:3px;overflow:hidden;margin-bottom:34px;background:var(--paper-2)}
 .periode-btn{font-family:var(--mono);font-size:.76rem;letter-spacing:.06em;text-transform:uppercase;padding:.75em 1.5em;background:none;border:none;color:var(--muted);cursor:pointer;transition:all .2s}
 .periode-btn.is-on{background:var(--ink);color:var(--paper)}
@@ -409,6 +414,20 @@ footer b{color:var(--paper);font-weight:500}
       <p>Prix affichés, sans devis. Chaque formule ouvre les modules du niveau inférieur. Les 7 premiers jours sont gratuits, l'abonnement est résiliable à tout moment.</p>
     </div>
 
+    <div class="inclus-bandeau">
+      <h3>Ce qui est inclus dans toutes les formules</h3>
+      <ul>
+        <li><b>Aucun module en option.</b> Tout le périmètre de votre formule est ouvert. Ailleurs, chaque module supplémentaire se facture couramment 90 à 120 € de plus par mois.</li>
+        <li><b>Opérationnel le jour même.</b> DUERP, processus, procédures, fiches de poste, organigramme et indicateurs arrivent pré-remplis. Pas de paramétrage préalable, pas de projet de déploiement.</li>
+        <li><b>Prix affiché, souscription en ligne.</b> Ni devis, ni rendez-vous commercial, ni frais de mise en service.</li>
+        <li><b>Hébergement en France</b>, sauvegardes et mises à jour réglementaires compris.</li>
+        <li><b>Espace cloisonné</b> : vos données ne côtoient celles d'aucun autre abonné.</li>
+        <li><b>Rappel quotidien par e-mail</b> des échéances dues et des retards.</li>
+        <li><b>Vos données restent les vôtres</b> : export PDF de tous les livrables, récupération à tout moment.</li>
+        <li><b>7 jours d'essai</b>, résiliable en un clic depuis votre espace.</li>
+      </ul>
+    </div>
+
     <div class="periode-switch" role="group" aria-label="Périodicité de facturation">
       <button type="button" class="periode-btn is-on" data-periode="mensuel" aria-pressed="true">Mensuel</button>
       <button type="button" class="periode-btn" data-periode="annuel" aria-pressed="false">Annuel <span style="color:var(--red)">— 2 mois offerts</span></button>
@@ -421,10 +440,12 @@ footer b{color:var(--paper);font-weight:500}
         <div class="formule-prix"><b data-prix="essentiel">79&nbsp;€</b><span data-suffixe> /mois HT</span></div>
         <p class="formule-postes">3 postes inclus · +15&nbsp;€/poste</p>
         <ul>
-          <li>DUERP et cartographie des risques</li>
-          <li>Plan d'action et événements AT/MP</li>
-          <li>Signalements terrain</li>
-          <li>Documents &amp; procédures (GED)</li>
+          <li><b>DUERP</b> : unités de travail, cotation, mise à jour annuelle, export PDF opposable</li>
+          <li><b>Cartographie des risques</b> : criticité gravité × probabilité, matrice, plan de maîtrise</li>
+          <li><b>Plan d'action</b> : responsable, échéance, relance automatique des retards</li>
+          <li><b>Événements AT/MP</b> : déclaration, analyse de cause, suivi des arrêts</li>
+          <li><b>Signalement terrain par QR code</b> — le déclarant n'a besoin d'aucun compte, photo à l'appui, depuis son téléphone</li>
+          <li><b>Documents &amp; procédures</b> : versions, diffusion, revue périodique</li>
         </ul>
         <button type="button" class="btn btn-ghost formule-cta" data-plan="essentiel">Essayer 7 jours →</button>
       </article>
@@ -436,11 +457,15 @@ footer b{color:var(--paper);font-weight:500}
         <div class="formule-prix"><b data-prix="qualite">149&nbsp;€</b><span data-suffixe> /mois HT</span></div>
         <p class="formule-postes">10 postes inclus · +15&nbsp;€/poste</p>
         <ul>
-          <li>Tout Essentiel</li>
-          <li>Audits qualité et non-conformités</li>
-          <li>Processus et diagnostics guidés</li>
-          <li>Équipements, performance QCDS, indicateurs</li>
-          <li>Suivi des certifications</li>
+          <li><b>Tout Essentiel</b>, plus :</li>
+          <li><b>Audits qualité</b> : grilles par référentiel (ISO 9001, 45001…), constats, rapport PDF généré</li>
+          <li><b>Non-conformités</b> : curatif, correctif, préventif et vérification d'efficacité</li>
+          <li><b>Diagnostics guidés</b> : auto-évaluation et score de maturité par thème</li>
+          <li><b>Processus</b> : pilotes, entrées/sorties, interactions</li>
+          <li><b>Équipements</b> : vérifications réglementaires et alertes d'échéance</li>
+          <li><b>Indicateurs</b> : objectif, seuil d'alerte, historique et courbes</li>
+          <li><b>Performance QCDS</b> : management visuel Qualité, Coûts, Délais, Sécurité</li>
+          <li><b>Certifications</b> : échéances, preuves, préparation d'audit</li>
         </ul>
         <button type="button" class="btn btn-primary formule-cta" data-plan="qualite">Essayer 7 jours →</button>
       </article>
@@ -451,12 +476,18 @@ footer b{color:var(--paper);font-weight:500}
         <div class="formule-prix"><b data-prix="expert">299&nbsp;€</b><span data-suffixe> /mois HT</span></div>
         <p class="formule-postes">25 postes inclus · +15&nbsp;€/poste</p>
         <ul>
-          <li>Tout Qualité</li>
-          <li>Audit interne et missions d'audit</li>
-          <li>Veille réglementaire, RGPD, 21 CFR Part 11</li>
-          <li>Maîtrise des modifications, validations, signature</li>
-          <li>Compétences, aptitudes, organigramme, planning</li>
-          <li>Devis &amp; factures (Factur-X) · radioprotection</li>
+          <li><b>Tout Qualité</b>, plus :</li>
+          <li><b>Audit interne</b> : univers d'audit par le risque, missions, constats, suivi des recommandations</li>
+          <li><b>Veille réglementaire</b> : textes applicables, analyse d'impact, preuve de conformité</li>
+          <li><b>RGPD</b> : registre des traitements, durées de conservation</li>
+          <li><b>21 CFR Part 11</b> : signature manuscrite avec sens de signature, journal d'audit inaltérable</li>
+          <li><b>Maîtrise des modifications</b> et circuit de validation avec relances</li>
+          <li><b>Compétences</b> : fiches de poste, profils, écarts</li>
+          <li><b>Aptitudes &amp; habilitations</b> : expirations suivies, alerte à 60 jours</li>
+          <li><b>Organigramme</b> et planning consolidé des échéances</li>
+          <li><b>Devis &amp; factures</b> : numérotation, Factur-X, e-facturation via PDP</li>
+          <li><b>Radioprotection</b> : doses par catégorie, alerte au seuil des 80 %</li>
+          <li><b>Rapport de direction</b> : synthèse QHSE d'une page, prête pour le comité</li>
         </ul>
         <button type="button" class="btn btn-ghost formule-cta" data-plan="expert">Essayer 7 jours →</button>
       </article>
@@ -467,12 +498,15 @@ footer b{color:var(--paper);font-weight:500}
         <div class="formule-prix"><b data-prix="cabinet">549&nbsp;€</b><span data-suffixe> /mois HT</span></div>
         <p class="formule-postes">Postes illimités</p>
         <ul>
-          <li>Tout Expert, postes illimités</li>
-          <li>Gestion multi-clients et missions</li>
-          <li>AMO (assistance à maîtrise d'ouvrage)</li>
-          <li>Consolidation groupe</li>
-          <li>Import de données, assistant IA</li>
-          <li>Journal d'audit et supervision</li>
+          <li><b>Tout Expert</b>, postes illimités, plus :</li>
+          <li><b>Multi-clients</b> : un dossier complet par organisation suivie, cloisonné et en marque blanche</li>
+          <li><b>Portail client</b> : vos clients consultent leurs propres livrables, sans voir ceux des autres</li>
+          <li><b>Missions</b> : cadrage, livrables, suivi des temps et rapports</li>
+          <li><b>AMO</b> : phases, jalons, situations de travaux, courriers, comptes rendus de chantier</li>
+          <li><b>Consolidation groupe</b> : tous les établissements suivis en un écran</li>
+          <li><b>Assistant IA</b> : cause racine, rédaction de constats et synthèses, avec plafond budgétaire</li>
+          <li><b>Import Excel</b> : reprise de l'existant sans ressaisie</li>
+          <li><b>Journal d'audit</b> inaltérable et supervision technique</li>
         </ul>
         <button type="button" class="btn btn-ghost formule-cta" data-plan="cabinet">Essayer 7 jours →</button>
       </article>
