@@ -205,6 +205,29 @@ footer{background:var(--ink);color:rgba(245,242,239,.55);border-top:1px solid rg
 footer .wrap{display:flex;justify-content:space-between;align-items:center;padding:30px 32px;flex-wrap:wrap;gap:16px;font-family:var(--mono);font-size:.74rem;letter-spacing:.04em}
 footer b{color:var(--paper);font-weight:500}
 
+/* --- Formules ONNOFF Expert --- */
+.periode-switch{display:inline-flex;border:1px solid var(--line);border-radius:3px;overflow:hidden;margin-bottom:34px;background:var(--paper-2)}
+.periode-btn{font-family:var(--mono);font-size:.76rem;letter-spacing:.06em;text-transform:uppercase;padding:.75em 1.5em;background:none;border:none;color:var(--muted);cursor:pointer;transition:all .2s}
+.periode-btn.is-on{background:var(--ink);color:var(--paper)}
+.periode-btn.is-on span{color:#ef6b76!important}
+.formule-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;align-items:stretch}
+.formule{position:relative;display:flex;flex-direction:column;border:1px solid var(--line);border-radius:6px;padding:32px 28px;background:var(--paper-2)}
+.formule.is-mise-en-avant{border-color:var(--red);box-shadow:0 12px 40px rgba(0,0,0,.07)}
+.formule-badge{position:absolute;top:-11px;left:28px;font-family:var(--mono);font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;background:var(--red);color:#fff;padding:.4em .9em;border-radius:2px}
+.formule h3{font-family:var(--serif);font-weight:500;font-size:1.4rem;margin:0}
+.formule-cible{color:var(--muted);font-size:.86rem;margin:4px 0 20px;min-height:2.4em}
+.formule-prix{font-family:var(--serif);font-size:2.2rem;line-height:1}
+.formule-prix span{font-family:var(--sans,inherit);font-size:.9rem;color:var(--muted)}
+.formule-postes{font-family:var(--mono);font-size:.74rem;letter-spacing:.04em;color:var(--red);margin:10px 0 22px}
+.formule ul{list-style:none;padding:0;margin:0 0 26px;display:flex;flex-direction:column;gap:9px;flex:1}
+.formule li{position:relative;padding-left:20px;font-size:.9rem;color:var(--ink-soft);line-height:1.45}
+.formule li::before{content:"—";position:absolute;left:0;color:var(--red)}
+.formule-cta{justify-content:center;width:100%;cursor:pointer;font:inherit}
+.formule-cta[disabled]{opacity:.55;cursor:progress}
+.formule-note{margin-top:30px;font-size:.88rem;color:var(--muted);max-width:70ch}
+.formule-note a{color:var(--red);border-bottom:1px solid var(--red)}
+.formule-erreur{margin-top:14px;font-size:.9rem;color:var(--red)}
+
 @media(max-width:860px){
   .nav-links{display:none}
   .burger{display:flex}
@@ -313,7 +336,10 @@ footer b{color:var(--paper);font-weight:500}
       <h2>Des logiciels métier en ligne</h2>
       <p>Des outils professionnels accessibles en ligne — abonnez-vous, créez votre espace et travaillez depuis votre poste.</p>
     </div>
-    <h3 style="font-family:var(--serif);font-weight:500;font-size:1.55rem;margin:0 0 16px">ONN-OFF Expert SSI <span style="font-family:var(--mono);font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--red);margin-left:8px">Coordination SSI &amp; registres</span></h3>
+    <p style="max-width:70ch;color:var(--muted);font-size:.94rem;margin:-26px 0 34px">
+      <b style="color:var(--ink)">Deux outils, deux métiers.</b> <b style="color:var(--ink)">ONNOFF Expert SSI</b> couvre la <b style="color:var(--ink)">sécurité incendie</b> d'un parc de bâtiments : dossiers d'identité SSI, registres de sécurité, consignes et plans. <b style="color:var(--ink)">ONNOFF Expert</b> couvre la <b style="color:var(--ink)">démarche QHSE</b> d'une organisation : risques, audits, conformité et pilotage. Ils s'utilisent séparément.
+    </p>
+    <h3 style="font-family:var(--serif);font-weight:500;font-size:1.55rem;margin:0 0 16px">ONNOFF Expert SSI <span style="font-family:var(--mono);font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--red);margin-left:8px">Sécurité incendie — registres &amp; coordination SSI</span></h3>
     <div style="border:1px solid var(--line);border-radius:6px;overflow:hidden;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr))">
       <div style="padding:38px 40px;background:var(--paper-2)">
         <p style="font-size:1.02rem;color:var(--ink-soft);margin-bottom:22px">
@@ -343,16 +369,16 @@ footer b{color:var(--paper);font-weight:500}
       </div>
     </div>
 
-    <h3 style="font-family:var(--serif);font-weight:500;font-size:1.55rem;margin:56px 0 16px">ONN/OFF Formation <span style="font-family:var(--mono);font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--red);margin-left:8px">Gestion de centre de formation</span></h3>
+    <h3 style="font-family:var(--serif);font-weight:500;font-size:1.55rem;margin:56px 0 16px">ONNOFF Expert <span style="font-family:var(--mono);font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--red);margin-left:8px">QHSE, audit qualité &amp; conformité</span></h3>
     <div style="border:1px solid var(--line);border-radius:6px;overflow:hidden;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr))">
       <div style="padding:38px 40px;background:var(--paper-2)">
         <p style="font-size:1.02rem;color:var(--ink-soft);margin-bottom:22px">
-          Pilotez l'ensemble de votre <strong>organisme de formation</strong> : <strong>sessions</strong> et planning, <strong>émargements</strong>, apprenants et formateurs, conformité <strong>Qualiopi</strong>, gestion commerciale (<strong>devis &amp; factures</strong>), diplômes et certificats — sur une plateforme web complète, quel que soit votre domaine de formation.
+          Pilotez toute votre démarche <strong>QHSE</strong> depuis un seul outil : <strong>DUERP</strong> et cartographie des risques, <strong>audits qualité</strong>, <strong>non-conformités</strong> et plans d'action, cartographie des <strong>processus</strong>, <strong>documents &amp; procédures (GED)</strong>, <strong>indicateurs</strong>, <strong>veille réglementaire</strong>, <strong>audit interne</strong>, <strong>RGPD</strong> et suivi des <strong>certifications</strong> — jusqu'aux <strong>devis &amp; factures</strong>. Votre espace est cloisonné : vos données n'appartiennent qu'à vous.
         </p>
         <div style="display:flex;flex-direction:column;gap:16px">
           <div style="display:flex;gap:15px;align-items:flex-start">
             <span style="font-family:var(--mono);color:var(--red);font-weight:500;font-size:.95rem">01</span>
-            <div><b style="display:block">Je choisis ma formule</b><span style="color:var(--muted);font-size:.92rem">Quatre offres, du formateur indépendant au centre multi-sites.</span></div>
+            <div><b style="display:block">Je choisis ma formule</b><span style="color:var(--muted);font-size:.92rem">Quatre offres, de la TPE au cabinet de conseil multi-clients.</span></div>
           </div>
           <div style="display:flex;gap:15px;align-items:flex-start">
             <span style="font-family:var(--mono);color:var(--red);font-weight:500;font-size:.95rem">02</span>
@@ -360,48 +386,100 @@ footer b{color:var(--paper);font-weight:500}
           </div>
           <div style="display:flex;gap:15px;align-items:flex-start">
             <span style="font-family:var(--mono);color:var(--red);font-weight:500;font-size:.95rem">03</span>
-            <div><b style="display:block">Je travaille en ligne</b><span style="color:var(--muted);font-size:.92rem">Accessible depuis n'importe quel navigateur, sans installation — vos données vous suivent.</span></div>
+            <div><b style="display:block">Je crée mon espace</b><span style="color:var(--muted);font-size:.92rem">Vous en êtes l'administrateur — accessible depuis n'importe quel navigateur, sans installation.</span></div>
           </div>
         </div>
       </div>
       <div style="background:var(--ink);color:var(--paper);padding:38px 40px;display:flex;flex-direction:column;justify-content:center">
         <span class="eyebrow" style="color:#ef6b76">Quatre formules — essai 7 jours</span>
-        <div style="font-family:var(--serif);font-size:2.7rem;line-height:1;margin-top:6px">dès 59&nbsp;€<span style="font-size:1rem;color:var(--silver-light)"> /mois HT</span></div>
-        <p style="color:var(--silver-light);font-size:.9rem;margin:10px 0 24px">Micro 59&nbsp;€ · Starter 79&nbsp;€ · Pro 149&nbsp;€ · Expert 299&nbsp;€ /mois HT · <b style="color:var(--paper)">−20&nbsp;% en annuel</b> · plateforme web complète incluse · <b style="color:#7ee2a8">7 jours d'essai gratuit, annulable à tout moment</b></p>
-        <a href="https://onn-off.fr/#tarifs" target="_blank" rel="noopener" class="btn btn-primary" style="justify-content:center">Voir les formules &amp; essayer 7 jours →</a>
-        <a href="https://onn-off.fr" target="_blank" rel="noopener" class="btn btn-ghost" style="justify-content:center;margin-top:11px">Découvrir ONN/OFF Formation</a>
+        <div style="font-family:var(--serif);font-size:2.7rem;line-height:1;margin-top:6px">dès 79&nbsp;€<span style="font-size:1rem;color:var(--silver-light)"> /mois HT</span></div>
+        <p style="color:var(--silver-light);font-size:.9rem;margin:10px 0 24px">Essentiel 79&nbsp;€ · Qualité 149&nbsp;€ · Expert 299&nbsp;€ · Cabinet 549&nbsp;€ /mois HT · <b style="color:var(--paper)">2 mois offerts en annuel</b> · +15&nbsp;€/poste supplémentaire · <b style="color:#7ee2a8">7 jours d'essai gratuit, annulable à tout moment</b></p>
+        <a href="#formules-expert" class="btn btn-primary" style="justify-content:center">Voir les formules &amp; essayer 7 jours →</a>
+        <a href="https://onnoff-expert.web.app" target="_blank" rel="noopener" class="btn btn-ghost" style="justify-content:center;margin-top:11px">J'ai déjà un compte — Me connecter</a>
       </div>
+    </div>
+  </div>
+</section>
+
+<section class="formules" id="formules-expert" style="padding:20px 0 90px">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">ONNOFF Expert — formules</span>
+      <h2>Choisissez votre formule</h2>
+      <p>Prix affichés, sans devis. Chaque formule ouvre les modules du niveau inférieur. Les 7 premiers jours sont gratuits, l'abonnement est résiliable à tout moment.</p>
     </div>
 
-    <h3 style="font-family:var(--serif);font-weight:500;font-size:1.55rem;margin:56px 0 16px">FORM-ONN <span style="font-family:var(--mono);font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--red);margin-left:8px">Contenus e-learning pour organismes de formation</span></h3>
-    <div style="border:1px solid var(--line);border-radius:6px;overflow:hidden;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr))">
-      <div style="padding:38px 40px;background:var(--paper-2)">
-        <p style="font-size:1.02rem;color:var(--ink-soft);margin-bottom:22px">
-          Des <strong>formations e-learning clé en main</strong> à dispenser sous votre marque : <strong>AIPR</strong>, habilitations électriques <strong>H0/B0</strong> et <strong>BS/BE</strong>, <strong>gestes &amp; postures</strong>… Cours complets, QCM, évaluations, <strong>émargement électronique horodaté</strong> et attestations de parcours détaillées — la responsabilité pédagogique reste celle de l'organisme de formation.
-        </p>
-        <div style="display:flex;flex-direction:column;gap:16px">
-          <div style="display:flex;gap:15px;align-items:flex-start">
-            <span style="font-family:var(--mono);color:var(--red);font-weight:500;font-size:.95rem">01</span>
-            <div><b style="display:block">Je crée mon espace centre</b><span style="color:var(--muted);font-size:.92rem">Compte gratuit en 2 minutes — e-mail et mot de passe, c'est tout.</span></div>
-          </div>
-          <div style="display:flex;gap:15px;align-items:flex-start">
-            <span style="font-family:var(--mono);color:var(--red);font-weight:500;font-size:.95rem">02</span>
-            <div><b style="display:block">Je loue ou je prends la licence annuelle</b><span style="color:var(--muted);font-size:.92rem">Paiement en ligne : l'accès s'ouvre immédiatement, facture acquittée automatique.</span></div>
-          </div>
-          <div style="display:flex;gap:15px;align-items:flex-start">
-            <span style="font-family:var(--mono);color:var(--red);font-weight:500;font-size:.95rem">03</span>
-            <div><b style="display:block">J'envoie le lien à mes apprenants</b><span style="color:var(--muted);font-size:.92rem">Ils suivent le cours, s'évaluent et émargent — les feuilles de présence arrivent chez vous.</span></div>
-          </div>
-        </div>
-      </div>
-      <div style="background:var(--ink);color:var(--paper);padding:38px 40px;display:flex;flex-direction:column;justify-content:center">
-        <span class="eyebrow" style="color:#ef6b76">Licence annuelle — apprenants illimités</span>
-        <div style="font-family:var(--serif);font-size:2.7rem;line-height:1;margin-top:6px">2&nbsp;500&nbsp;€<span style="font-size:1rem;color:var(--silver-light)"> /an HT par formation</span></div>
-        <p style="color:var(--silver-light);font-size:.9rem;margin:10px 0 24px"><b style="color:var(--paper)">Apprenants illimités, 12 mois</b> · hébergement, assistance et mises à jour réglementaires inclus · dégressif : <b style="color:var(--paper)">2&nbsp;000&nbsp;€ la 2ᵉ formation (−20&nbsp;%), 1&nbsp;750&nbsp;€ la 3ᵉ et suivantes (−30&nbsp;%)</b> · ou location 30 jours au nombre d'apprenants (dégressif au volume) · licence SCORM pour votre LMS sur devis</p>
-        <a href="https://form-onn.web.app" target="_blank" rel="noopener" class="btn btn-primary" style="justify-content:center">Voir le catalogue FORM-ONN →</a>
-        <a href="https://form-onn.web.app/espace-centre.html" target="_blank" rel="noopener" class="btn btn-ghost" style="justify-content:center;margin-top:11px">Créer mon espace centre</a>
-      </div>
+    <div class="periode-switch" role="group" aria-label="Périodicité de facturation">
+      <button type="button" class="periode-btn is-on" data-periode="mensuel" aria-pressed="true">Mensuel</button>
+      <button type="button" class="periode-btn" data-periode="annuel" aria-pressed="false">Annuel <span style="color:var(--red)">— 2 mois offerts</span></button>
     </div>
+
+    <div class="formule-grid">
+      <article class="formule">
+        <h3>Essentiel</h3>
+        <p class="formule-cible">TPE, un seul site</p>
+        <div class="formule-prix"><b data-prix="essentiel">79&nbsp;€</b><span data-suffixe> /mois HT</span></div>
+        <p class="formule-postes">3 postes inclus · +15&nbsp;€/poste</p>
+        <ul>
+          <li>DUERP et cartographie des risques</li>
+          <li>Plan d'action et événements AT/MP</li>
+          <li>Signalements terrain</li>
+          <li>Documents &amp; procédures (GED)</li>
+        </ul>
+        <button type="button" class="btn btn-ghost formule-cta" data-plan="essentiel">Essayer 7 jours →</button>
+      </article>
+
+      <article class="formule is-mise-en-avant">
+        <span class="formule-badge">Le plus choisi</span>
+        <h3>Qualité</h3>
+        <p class="formule-cible">PME certifiée ISO 9001 / 45001</p>
+        <div class="formule-prix"><b data-prix="qualite">149&nbsp;€</b><span data-suffixe> /mois HT</span></div>
+        <p class="formule-postes">10 postes inclus · +15&nbsp;€/poste</p>
+        <ul>
+          <li>Tout Essentiel</li>
+          <li>Audits qualité et non-conformités</li>
+          <li>Processus et diagnostics guidés</li>
+          <li>Équipements, performance QCDS, indicateurs</li>
+          <li>Suivi des certifications</li>
+        </ul>
+        <button type="button" class="btn btn-primary formule-cta" data-plan="qualite">Essayer 7 jours →</button>
+      </article>
+
+      <article class="formule">
+        <h3>Expert</h3>
+        <p class="formule-cible">Service QHSE, multi-sites</p>
+        <div class="formule-prix"><b data-prix="expert">299&nbsp;€</b><span data-suffixe> /mois HT</span></div>
+        <p class="formule-postes">25 postes inclus · +15&nbsp;€/poste</p>
+        <ul>
+          <li>Tout Qualité</li>
+          <li>Audit interne et missions d'audit</li>
+          <li>Veille réglementaire, RGPD, 21 CFR Part 11</li>
+          <li>Maîtrise des modifications, validations, signature</li>
+          <li>Compétences, aptitudes, organigramme, planning</li>
+          <li>Devis &amp; factures (Factur-X) · radioprotection</li>
+        </ul>
+        <button type="button" class="btn btn-ghost formule-cta" data-plan="expert">Essayer 7 jours →</button>
+      </article>
+
+      <article class="formule">
+        <h3>Cabinet</h3>
+        <p class="formule-cible">Cabinets de conseil, groupes multi-entités</p>
+        <div class="formule-prix"><b data-prix="cabinet">549&nbsp;€</b><span data-suffixe> /mois HT</span></div>
+        <p class="formule-postes">Postes illimités</p>
+        <ul>
+          <li>Tout Expert, postes illimités</li>
+          <li>Gestion multi-clients et missions</li>
+          <li>AMO (assistance à maîtrise d'ouvrage)</li>
+          <li>Consolidation groupe</li>
+          <li>Import de données, assistant IA</li>
+          <li>Journal d'audit et supervision</li>
+        </ul>
+        <button type="button" class="btn btn-ghost formule-cta" data-plan="cabinet">Essayer 7 jours →</button>
+      </article>
+    </div>
+
+    <p class="formule-note">Tarifs HT, hors options. Le paiement est traité par Stripe — nous ne conservons aucune donnée bancaire. Besoin d'un volume particulier ou d'un déploiement sur mesure ? <a href="#contact">Parlons-en →</a></p>
+    <p class="formule-erreur" id="formule-erreur" role="alert" hidden></p>
   </div>
 </section>
 
@@ -659,6 +737,79 @@ document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
       if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); toggle(); }
     });
   });
+})();
+</script>
+
+<script>
+/* Formules ONNOFF Expert : bascule mensuel/annuel et souscription Stripe.
+   Le prix annuel vaut 10 mois (2 mois offerts) ; les mêmes valeurs sont
+   définies dans lib/features/abonnement/domain/plan.dart et dans la Cloud
+   Function creerCheckout, qui reste seule juge du montant facturé. */
+(function(){
+  var CHECKOUT_URL = 'https://europe-west1-onnoff-expert.cloudfunctions.net/creerCheckout';
+  var PRIX = { essentiel:79, qualite:149, expert:299, cabinet:549 };
+  var periode = 'mensuel';
+
+  function euros(n){ return n.toLocaleString('fr-FR') + ' €'; }
+
+  function majPrix(){
+    Object.keys(PRIX).forEach(function(plan){
+      var el = document.querySelector('[data-prix="' + plan + '"]');
+      if(el) el.innerHTML = euros(periode === 'annuel' ? PRIX[plan] * 10 : PRIX[plan]);
+    });
+    document.querySelectorAll('[data-suffixe]').forEach(function(el){
+      el.textContent = periode === 'annuel' ? ' /an HT' : ' /mois HT';
+    });
+  }
+
+  document.querySelectorAll('.periode-btn').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      periode = btn.dataset.periode;
+      document.querySelectorAll('.periode-btn').forEach(function(b){
+        var on = b === btn;
+        b.classList.toggle('is-on', on);
+        b.setAttribute('aria-pressed', on ? 'true' : 'false');
+      });
+      majPrix();
+    });
+  });
+
+  var erreur = document.getElementById('formule-erreur');
+  function afficherErreur(msg){
+    if(!erreur) return;
+    erreur.textContent = msg;
+    erreur.hidden = false;
+  }
+
+  document.querySelectorAll('.formule-cta').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var libelle = btn.textContent;
+      btn.disabled = true;
+      btn.textContent = 'Redirection vers le paiement…';
+      if(erreur) erreur.hidden = true;
+
+      fetch(CHECKOUT_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ plan: btn.dataset.plan, periodicite: periode })
+      })
+      .then(function(r){
+        if(!r.ok) throw new Error('HTTP ' + r.status);
+        return r.json();
+      })
+      .then(function(data){
+        if(!data || !data.url) throw new Error('URL de paiement absente');
+        window.location.href = data.url;
+      })
+      .catch(function(){
+        btn.disabled = false;
+        btn.textContent = libelle;
+        afficherErreur("La souscription en ligne est momentanément indisponible. Écrivez-nous via le formulaire de contact et nous ouvrons votre espace manuellement.");
+      });
+    });
+  });
+
+  majPrix();
 })();
 </script>
 <a class="cta-float" href="#contact">Discuter de votre projet →</a>
