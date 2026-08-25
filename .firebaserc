@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "onn-off-vitrine"
+  },
+  "targets": {
+    "onn-off-vitrine": {
+      "hosting": {
+        "ingenierie": [
+          "onn-off-ingenierie"
+        ]
+      }
+    }
+  }
+}
