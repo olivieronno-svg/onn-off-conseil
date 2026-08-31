@@ -91,7 +91,7 @@ body{background:transparent}
   background:linear-gradient(180deg,rgba(245,242,239,.88),rgba(245,242,239,.78) 45%,rgba(245,242,239,.88))}
 @media(prefers-reduced-motion:reduce){.site-bg__slide{animation:none;transform:none}}
 /* la zone contact garde son fond photo dédié (validé) */
-.contact.bgp-risques{background-image:linear-gradient(rgba(27,23,27,.84),rgba(27,23,27,.84)),url('img/bg-risques.webp');background-size:cover;background-position:center}
+.contact.bgp-risques{background-image:linear-gradient(rgba(27,23,27,.84),rgba(27,23,27,.84)),url('/img/bg-risques.webp');background-size:cover;background-position:center}
 /* ===== engagements ===== */
 .eng-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);margin-top:46px}
 .eng{background:var(--paper);padding:32px 30px}
