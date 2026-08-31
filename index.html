@@ -10,246 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;1,400;1,500&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-<style>
-:root{
-  --ink:#1B171B;
-  --ink-soft:#272027;
-  --paper:#F5F2EF;
-  --paper-2:#EAE4DE;
-  --red:#A81B26;
-  --red-bright:#D62534;
-  --silver:#9AA0A8;
-  --silver-light:#CFD3D8;
-  --line:rgba(27,23,27,.14);
-  --muted:#615b62;
-  --serif:"Spectral",Georgia,serif;
-  --sans:"IBM Plex Sans",system-ui,sans-serif;
-  --mono:"IBM Plex Mono",monospace;
-}
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{font-family:var(--sans);background:var(--paper);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-.wrap{max-width:1180px;margin:0 auto;padding:0 32px}
-a{color:inherit;text-decoration:none}
-
-.eyebrow{font-family:var(--mono);font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--red);display:inline-flex;align-items:center;gap:.6em}
-.eyebrow::before{content:"";width:26px;height:1px;background:var(--red)}
-
-/* ===== NAV ===== */
-nav{position:sticky;top:0;z-index:50;background:rgba(245,242,239,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
-nav .wrap{display:flex;align-items:center;justify-content:space-between;height:74px}
-.brand{display:flex;align-items:center;gap:13px}
-.brand img{width:56px;height:56px;border-radius:50%;object-fit:cover;box-shadow:0 1px 8px rgba(168,27,38,.3)}
-.brand .txt{display:flex;flex-direction:column;line-height:1.05}
-.brand .txt b{font-family:var(--mono);font-weight:500;font-size:1rem;letter-spacing:.02em}
-.brand .txt span{font-size:.6rem;letter-spacing:.18em;color:var(--muted);text-transform:uppercase}
-.nav-right{display:flex;align-items:center;gap:26px}
-.corner-logo{display:flex;align-items:center}
-.corner-logo img{width:44px;height:44px;border-radius:50%;object-fit:cover;box-shadow:0 1px 6px rgba(168,27,38,.25);transition:transform .25s}
-.corner-logo:hover img{transform:scale(1.06)}
-.nav-links{display:flex;gap:34px;align-items:center}
-.nav-links a{font-size:.86rem;color:var(--muted);transition:color .2s}
-.nav-links a:hover{color:var(--ink)}
-.nav-cta{font-family:var(--mono);font-size:.78rem;letter-spacing:.06em;border:1px solid var(--ink);padding:.6em 1.2em;border-radius:2px;transition:all .25s}
-.nav-cta:hover{background:var(--red);border-color:var(--red);color:#fff}
-.burger{display:none;flex-direction:column;gap:5px;cursor:pointer}
-.burger span{width:24px;height:2px;background:var(--ink)}
-
-/* ===== HERO ===== */
-.hero{position:relative;background:var(--ink);color:var(--paper);overflow:hidden}
-.hero::before{content:"";position:absolute;inset:0;
-  background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);
-  background-size:46px 46px;mask-image:radial-gradient(ellipse 150% 130% at 50% 32%,#000 60%,transparent 100%)}
-.hero::after{content:"";position:absolute;top:-15%;right:-8%;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle,rgba(214,37,52,.20),transparent 64%);filter:blur(8px)}
-.hero-glow2{position:absolute;bottom:-25%;left:-10%;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(214,37,52,.12),transparent 66%);filter:blur(10px);z-index:1}
-.hero-bg-logo{position:absolute;top:50%;right:-4%;transform:translateY(-50%);z-index:1;pointer-events:none}
-.hero-bg-logo img{width:min(48vw,600px);aspect-ratio:1;border-radius:50%;object-fit:cover;filter:blur(5px);opacity:.20;mask-image:radial-gradient(circle,#000 52%,transparent 76%);-webkit-mask-image:radial-gradient(circle,#000 52%,transparent 76%)}
-.hero .wrap{position:relative;z-index:2;display:block;padding:104px 32px 110px}
-.hero .eyebrow{color:#ef6b76}
-.hero .eyebrow::before{background:#ef6b76}
-.hero h1{font-family:var(--serif);font-weight:500;font-size:clamp(2.6rem,5.4vw,4.6rem);line-height:1.1;letter-spacing:-.015em;margin:24px 0 0;max-width:20ch;padding-bottom:.05em}
-.hero h1 em{font-style:italic;color:var(--paper)}
-.hero p.lead{font-size:1.1rem;color:rgba(245,242,239,.74);max-width:60ch;margin-top:28px;font-weight:300}
-.hero-actions{display:flex;gap:16px;margin-top:40px;flex-wrap:wrap}
-.hero-medallion{display:flex;justify-content:center}
-.hero-medallion img{width:min(28vw,240px);aspect-ratio:1;border-radius:50%;object-fit:cover;
-  box-shadow:0 0 0 1px rgba(207,211,216,.25),0 30px 70px rgba(0,0,0,.5),0 0 60px rgba(214,37,52,.25);animation:floaty 6s ease-in-out infinite}
-@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
-.btn{font-family:var(--mono);font-size:.82rem;letter-spacing:.05em;padding:.95em 1.7em;border-radius:2px;transition:all .25s;display:inline-flex;align-items:center;gap:.6em;cursor:pointer}
-.btn-primary{background:var(--red-bright);color:#fff;font-weight:500}
-.btn-primary:hover{background:#fff;color:var(--ink);transform:translateY(-2px)}
-.btn-ghost{border:1px solid rgba(245,242,239,.3);color:var(--paper)}
-.btn-ghost:hover{border-color:#ef6b76;color:#ef6b76}
-.hero-meta{position:relative;z-index:2;border-top:1px solid rgba(255,255,255,.12)}
-.hero-meta .wrap{display:flex;flex-wrap:wrap;gap:50px;padding:24px 32px}
-.hero-meta div{font-family:var(--mono);font-size:.78rem;color:rgba(245,242,239,.6);letter-spacing:.04em}
-.hero-meta b{display:block;font-family:var(--sans);font-size:1rem;color:var(--paper);font-weight:500;letter-spacing:0;margin-top:3px}
-
-.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
-.reveal.in{opacity:1;transform:none}
-
-/* ===== INTRO ===== */
-.intro{padding:110px 0 30px}
-/* ===== CARROUSEL PLEIN SITE (photos en fond, fondu + zoom lent, voile clair) ===== */
-html{background:var(--paper)}
-body{background:transparent}
-.site-bg{position:fixed;inset:0;z-index:-2;overflow:hidden;pointer-events:none}
-.site-bg__slide{position:absolute;inset:0;background-size:cover;background-position:center;
-  opacity:0;transition:opacity 2.2s ease-in-out;
-  transform:scale(1.0);animation:bgZoom 30s ease-in-out infinite alternate}
-.site-bg__slide.is-active{opacity:1}
-@keyframes bgZoom{from{transform:scale(1.0)}to{transform:scale(1.045)}}
-.site-veil{position:fixed;inset:0;z-index:-1;pointer-events:none;
-  background:linear-gradient(180deg,rgba(245,242,239,.88),rgba(245,242,239,.78) 45%,rgba(245,242,239,.88))}
-@media(prefers-reduced-motion:reduce){.site-bg__slide{animation:none;transform:none}}
-/* la zone contact garde son fond photo dédié (validé) */
-.contact.bgp-risques{background-image:linear-gradient(rgba(27,23,27,.84),rgba(27,23,27,.84)),url('img/bg-risques.webp');background-size:cover;background-position:center}
-/* ===== engagements ===== */
-.eng-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);margin-top:46px}
-.eng{background:var(--paper);padding:32px 30px}
-.eng .k{font-family:var(--mono);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--red);margin-bottom:12px}
-.eng h3{font-family:var(--serif);font-weight:500;font-size:1.15rem;margin-bottom:8px}
-.eng p{color:#3a3540;font-size:.93rem}
-/* ===== FAQ ===== */
-.faq{max-width:820px;margin:46px auto 0}
-.faq details{background:var(--paper);border:1px solid var(--line);border-radius:3px;margin-bottom:10px;overflow:hidden}
-.faq summary{cursor:pointer;list-style:none;padding:20px 24px;font-family:var(--serif);font-size:1.06rem;position:relative;padding-right:52px}
-.faq summary::-webkit-details-marker{display:none}
-.faq summary::after{content:"+";position:absolute;right:22px;top:50%;transform:translateY(-50%);font-family:var(--mono);color:var(--red);font-size:1.2rem;transition:transform .3s}
-.faq details[open] summary::after{transform:translateY(-50%) rotate(45deg)}
-.faq .a{padding:0 24px 20px;color:#3a3540;font-size:.95rem;line-height:1.6}
-/* ===== CTA flottant ===== */
-.cta-float{position:fixed;right:22px;bottom:22px;z-index:60;background:var(--red);color:#fff;font-family:var(--mono);font-size:.8rem;letter-spacing:.05em;padding:.95em 1.5em;border-radius:40px;box-shadow:0 6px 24px rgba(168,27,38,.35);transition:transform .25s,background .25s}
-.cta-float:hover{background:var(--red-bright);transform:translateY(-2px)}
-@media(max-width:640px){.cta-float{right:14px;bottom:14px;font-size:.72rem}}
-/* ===== tuiles prestations cliquables (accordéon) ===== */
-.svc.clickable{cursor:pointer}
-.svc .plus{position:absolute;top:30px;right:28px;font-family:var(--mono);font-size:1.25rem;color:var(--red);transition:transform .3s ease;line-height:1}
-.svc.open .plus{transform:rotate(45deg)}
-.svc .svc-more{max-height:0;overflow:hidden;transition:max-height .5s ease}
-.svc.open .svc-more{max-height:480px}
-.svc-more ul{margin:16px 0 0;padding-left:1.15em;color:#3a3540;font-size:.94rem;line-height:1.55}
-.svc-more li{margin-bottom:.45em}
-.svc-more li::marker{color:var(--red)}
-.svc-more .svc-cta{display:inline-block;margin-top:14px;font-family:var(--mono);font-size:.8rem;letter-spacing:.05em;color:var(--red);border-bottom:1px solid var(--red)}
-.intro-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:70px;align-items:start}
-.intro h2{font-family:var(--serif);font-weight:400;font-size:clamp(1.8rem,3.4vw,2.7rem);line-height:1.26;letter-spacing:-.01em;padding-bottom:.06em}
-.intro .body p{color:#3a3540;font-size:1.06rem;margin-bottom:18px}
-.intro .body p:first-child{font-size:1.18rem;color:var(--ink)}
-
-/* ===== SERVICES ===== */
-.services{padding:90px 0 30px}
-.sec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;margin-bottom:50px;flex-wrap:wrap}
-.sec-head h2{font-family:var(--serif);font-weight:400;font-size:clamp(2rem,4vw,3rem);letter-spacing:-.01em;line-height:1.12}
-.sec-head p{color:var(--muted);max-width:38ch;font-size:.98rem}
-.svc-grid{display:grid;grid-template-columns:repeat(2,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line)}
-.svc{position:relative;padding:38px 36px 40px;border-bottom:1px solid var(--line);border-right:1px solid var(--line);background:var(--paper);transition:background .3s}
-.svc .num{font-family:var(--mono);font-size:.78rem;color:var(--red);letter-spacing:.1em}
-.svc h3{font-family:var(--serif);font-weight:500;font-size:1.42rem;margin:14px 0 10px;letter-spacing:-.01em}
-.svc p{color:#4a4550;font-size:.96rem}
-.svc::after{content:"";position:absolute;left:0;top:0;height:2px;width:0;background:var(--red-bright);transition:width .35s ease}
-.svc:hover{background:#fff}
-.svc:hover::after{width:100%}
-.svc.feature{background:var(--ink);color:var(--paper)}
-.svc.feature .num{color:#ef6b76}
-.svc.feature p{color:rgba(245,242,239,.72)}
-.svc.feature .tag{display:inline-block;font-family:var(--mono);font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:#fff;background:var(--red-bright);padding:.25em .7em;border-radius:2px;margin-top:16px}
-
-/* ===== FOCUS ===== */
-.focus{margin:120px 0;background:var(--ink-soft);color:var(--paper);position:relative;overflow:hidden}
-.focus::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:40px 40px;mask-image:radial-gradient(ellipse 70% 100% at 18% 50%,#000,transparent)}
-.focus .wrap{position:relative;display:grid;grid-template-columns:1.1fr 1fr;gap:60px;align-items:center;padding:80px 32px}
-.focus h2{font-family:var(--serif);font-weight:400;font-size:clamp(1.9rem,3.6vw,2.8rem);line-height:1.12;margin:18px 0 22px}
-.focus h2 em{font-style:italic;color:var(--red-bright)}
-.focus p{color:rgba(245,242,239,.78);font-size:1.05rem;font-weight:300;max-width:48ch}
-.focus ul{list-style:none;display:grid;gap:14px}
-.focus li{font-family:var(--mono);font-size:.86rem;letter-spacing:.02em;padding:16px 20px;border:1px solid rgba(255,255,255,.14);border-radius:3px;display:flex;gap:14px;align-items:center;color:rgba(245,242,239,.9);transition:border-color .25s,transform .25s}
-.focus li:hover{border-color:var(--red-bright);transform:translateX(6px)}
-.focus li b{color:#ef6b76;font-family:var(--mono)}
-
-/* ===== PROCESS ===== */
-.process{padding:96px 0 90px}
-.sectors{padding:96px 0 10px}
-.tag-cloud{display:flex;flex-wrap:wrap;gap:12px;margin-top:8px}
-.tag-cloud span{font-family:var(--mono);font-size:.8rem;letter-spacing:.01em;padding:.7em 1.15em;border:1px solid var(--line);border-radius:40px;color:#3a3540;background:var(--paper);transition:border-color .25s,color .25s,transform .25s;cursor:default}
-.tag-cloud span:hover{border-color:var(--red);color:var(--red);transform:translateY(-2px)}
-.proc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--line);margin-top:46px}
-.step{padding:30px 26px 36px;border-right:1px solid var(--line)}
-.step:last-child{border-right:none}
-.step .n{font-family:var(--mono);font-size:.78rem;color:var(--red)}
-.step h4{font-family:var(--serif);font-weight:500;font-size:1.18rem;margin:12px 0 8px}
-.step p{color:var(--muted);font-size:.9rem}
-
-/* ===== CONTACT ===== */
-.contact{background:var(--ink);color:var(--paper);position:relative;overflow:hidden}
-.contact::after{content:"";position:absolute;bottom:-30%;left:-5%;width:480px;height:480px;border-radius:50%;background:radial-gradient(circle,rgba(214,37,52,.18),transparent 64%)}
-.contact .wrap{position:relative;z-index:2;padding:100px 32px}
-.contact h2{font-family:var(--serif);font-weight:400;font-size:clamp(2.2rem,4.5vw,3.4rem);letter-spacing:-.01em;line-height:1.12;max-width:18ch;padding-bottom:.06em}
-.contact h2 em{font-style:italic;color:var(--red-bright)}
-.contact-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:60px;margin-top:50px;align-items:start}
-.coord{display:block}
-.coord p{margin:0;line-height:1.65;font-size:1rem;color:rgba(245,242,239,.85)}
-.coord a{color:rgba(245,242,239,.92);border-bottom:1px solid #ef6b76}
-.coord .stamp-name{font-family:var(--serif);font-weight:600;font-size:1.3rem;color:var(--paper);margin-bottom:6px;line-height:1.3}
-.coord .stamp-siren{font-style:italic;color:rgba(245,242,239,.6);font-size:.92rem;margin-top:8px}
-.contact .cta-box{border:1px solid rgba(255,255,255,.16);border-radius:4px;padding:34px}
-.contact .cta-box p{color:rgba(245,242,239,.72);font-size:.96rem;margin-bottom:22px;font-weight:300}
-.contact-form{display:grid;gap:12px}
-.contact-form input,.contact-form textarea{width:100%;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.18);border-radius:3px;padding:.8em 1em;color:var(--paper);font-family:var(--sans);font-size:.95rem;transition:border-color .2s}
-.contact-form input::placeholder,.contact-form textarea::placeholder{color:rgba(245,242,239,.45)}
-.contact-form input:focus,.contact-form textarea:focus{outline:none;border-color:var(--red-bright)}
-.contact-form textarea{resize:vertical}
-.contact-form button{margin-top:6px;border:none;font-family:var(--mono)}
-
-footer{background:var(--ink);color:rgba(245,242,239,.55);border-top:1px solid rgba(255,255,255,.1)}
-footer .wrap{display:flex;justify-content:space-between;align-items:center;padding:30px 32px;flex-wrap:wrap;gap:16px;font-family:var(--mono);font-size:.74rem;letter-spacing:.04em}
-footer b{color:var(--paper);font-weight:500}
-
-/* --- Formules ONNOFF Expert --- */
-.inclus-bandeau{border:1px solid var(--line);border-left:3px solid var(--red);border-radius:6px;background:var(--paper-2);padding:28px 32px;margin-bottom:34px}
-.inclus-bandeau h3{font-family:var(--serif);font-weight:500;font-size:1.25rem;margin:0 0 16px}
-.inclus-bandeau ul{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:11px 30px}
-.inclus-bandeau li{position:relative;padding-left:20px;font-size:.92rem;color:var(--ink-soft);line-height:1.5}
-.inclus-bandeau li::before{content:"¹3";position:absolute;left:0;color:var(--red);font-weight:700}
-.periode-switch{display:inline-flex;border:1px solid var(--line);border-radius:3px;overflow:hidden;margin-bottom:34px;background:var(--paper-2)}
-.periode-btn{font-family:var(--mono);font-size:.76rem;letter-spacing:.06em;text-transform:uppercase;padding:.75em 1.5em;background:none;border:none;color:var(--muted);cursor:pointer;transition:all .2s}
-.periode-btn.is-on{background:var(--ink);color:var(--paper)}
-.periode-btn.is-on span{color:#ef6b76!important}
-.formule-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;align-items:stretch}
-.formule{position:relative;display:flex;flex-direction:column;border:1px solid var(--line);border-radius:6px;padding:32px 28px;background:var(--paper-2)}
-.formule.is-mise-en-avant{border-color:var(--red);box-shadow:0 12px 40px rgba(0,0,0,.07)}
-.formule-badge{position:absolute;top:-11px;left:28px;font-family:var(--mono);font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;background:var(--red);color:#fff;padding:.4em .9em;border-radius:2px}
-.formule h3{font-family:var(--serif);font-weight:500;font-size:1.4rem;margin:0}
-.formule-cible{color:var(--muted);font-size:.86rem;margin:4px 0 20px;min-height:2.4em}
-.formule-prix{font-family:var(--serif);font-size:2.2rem;line-height:1}
-.formule-prix span{font-family:var(--sans,inherit);font-size:.9rem;color:var(--muted)}
-.formule-postes{font-family:var(--mono);font-size:.74rem;letter-spacing:.04em;color:var(--red);margin:10px 0 22px}
-.formule ul{list-style:none;padding:0;margin:0 0 26px;display:flex;flex-direction:column;gap:9px;flex:1}
-.formule li{position:relative;padding-left:20px;font-size:.9rem;color:var(--ink-soft);line-height:1.45}
-.formule li::before{content:"—";position:absolute;left:0;color:var(--red)}
-.formule-cta{justify-content:center;width:100%;cursor:pointer;font:inherit}
-.formule-cta[disabled]{opacity:.55;cursor:progress}
-.formule-note{margin-top:30px;font-size:.88rem;color:var(--muted);max-width:70ch}
-.formule-note a{color:var(--red);border-bottom:1px solid var(--red)}
-.formule-erreur{margin-top:14px;font-size:.9rem;color:var(--red)}
-
-@media(max-width:860px){
-  .nav-links{display:none}
-  .burger{display:flex}
-  .hero .wrap{grid-template-columns:1fr;gap:40px;padding:70px 28px 80px}
-  .hero-medallion{order:-1}
-  .hero-medallion img{width:min(42vw,170px)}
-  .intro-grid,.focus .wrap,.contact-grid{grid-template-columns:1fr;gap:36px}
-  .svc-grid{grid-template-columns:1fr}
-  .proc-grid{grid-template-columns:1fr 1fr}
-  .step:nth-child(2){border-right:none}
-  .step{border-bottom:1px solid var(--line)}
-}
-@media(max-width:520px){
-  .proc-grid{grid-template-columns:1fr}
-  .step{border-right:none}
-}
-</style>
+<link rel="stylesheet" href="assets/style.css">
 <meta property="og:title" content="Onn-Off Ingénierie & Conseil — Audit, Conseil, Sécurité · Paris">
 <meta property="og:description" content="Bureau d'ingénierie et de conseil indépendant : AMO, audit, pilotage de projets, management des risques, sécurité incendie ERP/IGH. Paris et France entière.">
 <meta property="og:type" content="website">
@@ -288,9 +49,9 @@ footer b{color:var(--paper);font-weight:500}
     </a>
     <div class="nav-right">
       <div class="nav-links">
-        <a href="#prestations">Prestations</a>
-        <a href="#secteurs">Secteurs</a>
-        <a href="#demarche">Démarche</a>
+        <a href="/prestations">Prestations</a>
+        <a href="/logiciels">Logiciels</a>
+        <a href="/a-propos">À propos</a>
         <a href="#contact" class="nav-cta">Me contacter</a>
       </div>
       <div class="burger" onclick="var n=document.querySelector('.nav-links');n.style.display=(getComputedStyle(n).display==='none'?'flex':'none')">
@@ -310,7 +71,7 @@ footer b{color:var(--paper);font-weight:500}
       <p class="lead">Ingénierie, assistance à maîtrise d'ouvrage, audit, pilotage, management des risques, sécurité et sûreté : un accompagnement technique complet, du cadrage à la réception de vos projets.</p>
       <div class="hero-actions">
         <a href="#contact" class="btn btn-primary">Discuter de votre projet →</a>
-        <a href="#prestations" class="btn btn-ghost">Voir les prestations</a>
+        <a href="/prestations" class="btn btn-ghost">Voir les prestations</a>
       </div>
     </div>
   </div>
@@ -336,334 +97,43 @@ footer b{color:var(--paper);font-weight:500}
   </div>
 </section>
 
-<section class="logiciel" id="logiciel" style="padding:90px 0 40px">
-  <div class="wrap">
-    <div class="sec-head">
-      <span class="eyebrow">Nos logiciels</span>
-      <h2>Des logiciels métier en ligne</h2>
-      <p>Des outils professionnels accessibles en ligne — abonnez-vous, créez votre espace et travaillez depuis votre poste.</p>
-    </div>
-    <p style="max-width:70ch;color:var(--muted);font-size:.94rem;margin:-26px 0 34px">
-      <b style="color:var(--ink)">Deux outils, deux métiers.</b> <b style="color:var(--ink)">ONNOFF Expert SSI</b> couvre la <b style="color:var(--ink)">sécurité incendie</b> d'un parc de bâtiments : dossiers d'identité SSI, registres de sécurité, consignes et plans. <b style="color:var(--ink)">ONNOFF Expert</b> couvre la <b style="color:var(--ink)">démarche QHSE</b> d'une organisation : risques, audits, conformité et pilotage. Ils s'utilisent séparément.
-    </p>
-    <h3 style="font-family:var(--serif);font-weight:500;font-size:1.55rem;margin:0 0 16px">ONNOFF Expert SSI <span style="font-family:var(--mono);font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--red);margin-left:8px">Sécurité incendie — registres &amp; coordination SSI</span></h3>
-    <div style="border:1px solid var(--line);border-radius:6px;overflow:hidden;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr))">
-      <div style="padding:38px 40px;background:var(--paper-2)">
-        <p style="font-size:1.02rem;color:var(--ink-soft);margin-bottom:22px">
-          Constituez les <strong>dossiers d'identité SSI</strong>, générez des <strong>registres de sécurité</strong> multi-typologies (ERP, IGH, ERT…), gérez les <strong>consignes</strong>, les <strong>plans d'intervention et d'évacuation</strong> et votre <strong>équipe</strong> — le tout cloisonné par cabinet et conforme à l'art. R.143-44 du CCH.
-        </p>
-        <div style="display:flex;flex-direction:column;gap:16px">
-          <div style="display:flex;gap:15px;align-items:flex-start">
-            <span style="font-family:var(--mono);color:var(--red);font-weight:500;font-size:.95rem">01</span>
-            <div><b style="display:block">Je m'abonne</b><span style="color:var(--muted);font-size:.92rem">Réglez votre premier abonnement en ligne, en toute sécurité.</span></div>
-          </div>
-          <div style="display:flex;gap:15px;align-items:flex-start">
-            <span style="font-family:var(--mono);color:var(--red);font-weight:500;font-size:.95rem">02</span>
-            <div><b style="display:block">Je crée mon cabinet</b><span style="color:var(--muted);font-size:.92rem">Un formulaire, et votre espace est prêt — vous en êtes l'administrateur.</span></div>
-          </div>
-          <div style="display:flex;gap:15px;align-items:flex-start">
-            <span style="font-family:var(--mono);color:var(--red);font-weight:500;font-size:.95rem">03</span>
-            <div><b style="display:block">Je me connecte sur mon PC</b><span style="color:var(--muted);font-size:.92rem">Application web installable sur ordinateur, tablette et mobile.</span></div>
-          </div>
-        </div>
-      </div>
-      <div style="background:var(--ink);color:var(--paper);padding:38px 40px;display:flex;flex-direction:column;justify-content:center">
-        <span class="eyebrow" style="color:#ef6b76">Full accès — tout inclus</span>
-        <div style="font-family:var(--serif);font-size:2.7rem;line-height:1;margin-top:6px">69&nbsp;€<span style="font-size:1rem;color:var(--silver-light)"> /mois HT</span></div>
-        <p style="color:var(--silver-light);font-size:.9rem;margin:10px 0 24px">3 postes inclus · établissements illimités · +15&nbsp;€/poste supplémentaire · <b style="color:var(--paper)">tout est inclus, aucune option payante</b> · 2 mois offerts en annuel (690&nbsp;€/an) · <b style="color:#7ee2a8">7 jours d'essai gratuit, sans carte bancaire</b></p>
-        <a href="https://onn-off-expert-ssi.vercel.app/inscription" target="_blank" rel="noopener" class="btn btn-primary" style="justify-content:center">Essayer gratuitement 7 jours →</a>
-        <a href="https://onn-off-expert-ssi.vercel.app/login" target="_blank" rel="noopener" class="btn btn-ghost" style="justify-content:center;margin-top:11px">J'ai déjà un compte — Me connecter</a>
-      </div>
-    </div>
-
-    <h3 style="font-family:var(--serif);font-weight:500;font-size:1.55rem;margin:56px 0 16px">ONNOFF Expert <span style="font-family:var(--mono);font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--red);margin-left:8px">QHSE, audit qualité &amp; conformité</span></h3>
-    <div style="border:1px solid var(--line);border-radius:6px;overflow:hidden;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr))">
-      <div style="padding:38px 40px;background:var(--paper-2)">
-        <p style="font-size:1.02rem;color:var(--ink-soft);margin-bottom:22px">
-          Pilotez toute votre démarche <strong>QHSE</strong> depuis un seul outil : <strong>DUERP</strong> et cartographie des risques, <strong>audits qualité</strong>, <strong>non-conformités</strong> et plans d'action, cartographie des <strong>processus</strong>, <strong>documents &amp; procédures (GED)</strong>, <strong>indicateurs</strong>, <strong>veille réglementaire</strong>, <strong>audit interne</strong>, <strong>RGPD</strong> et suivi des <strong>certifications</strong> — jusqu'aux <strong>devis &amp; factures</strong>. Votre espace est cloisonné : vos données n'appartiennent qu'à vous.
-        </p>
-        <div style="display:flex;flex-direction:column;gap:16px">
-          <div style="display:flex;gap:15px;align-items:flex-start">
-            <span style="font-family:var(--mono);color:var(--red);font-weight:500;font-size:.95rem">01</span>
-            <div><b style="display:block">Je choisis ma formule</b><span style="color:var(--muted);font-size:.92rem">Quatre offres, de la TPE au cabinet de conseil multi-clients.</span></div>
-          </div>
-          <div style="display:flex;gap:15px;align-items:flex-start">
-            <span style="font-family:var(--mono);color:var(--red);font-weight:500;font-size:.95rem">02</span>
-            <div><b style="display:block">J'essaie 7 jours gratuitement</b><span style="color:var(--muted);font-size:.92rem">L'essai est inclus à la souscription — annulable à tout moment.</span></div>
-          </div>
-          <div style="display:flex;gap:15px;align-items:flex-start">
-            <span style="font-family:var(--mono);color:var(--red);font-weight:500;font-size:.95rem">03</span>
-            <div><b style="display:block">Je crée mon espace</b><span style="color:var(--muted);font-size:.92rem">Vous en êtes l'administrateur — accessible depuis n'importe quel navigateur, sans installation.</span></div>
-          </div>
-        </div>
-      </div>
-      <div style="background:var(--ink);color:var(--paper);padding:38px 40px;display:flex;flex-direction:column;justify-content:center">
-        <span class="eyebrow" style="color:#ef6b76">Quatre formules — essai 7 jours</span>
-        <div style="font-family:var(--serif);font-size:2.7rem;line-height:1;margin-top:6px">dès 79&nbsp;€<span style="font-size:1rem;color:var(--silver-light)"> /mois HT</span></div>
-        <p style="color:var(--silver-light);font-size:.9rem;margin:10px 0 24px">Essentiel 79&nbsp;€ · Qualité 149&nbsp;€ · Expert 299&nbsp;€ · Cabinet 549&nbsp;€ /mois HT · <b style="color:var(--paper)">2 mois offerts en annuel</b> · +15&nbsp;€/poste supplémentaire · <b style="color:#7ee2a8">7 jours d'essai gratuit, annulable à tout moment</b></p>
-        <a href="#formules-expert" class="btn btn-primary" style="justify-content:center">Voir les formules &amp; essayer 7 jours →</a>
-        <a href="https://onnoff-expert.web.app" target="_blank" rel="noopener" class="btn btn-ghost" style="justify-content:center;margin-top:11px">J'ai déjà un compte — Me connecter</a>
-      </div>
+<section id="explorer" style="background:var(--paper-2,#F5F2EF)">
+  <div class="wrap" style="padding:72px 32px">
+    <p class="eyebrow">Explorer</p>
+    <h2 style="margin-top:12px">Tout le détail, page par page</h2>
+    <div style="display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));margin-top:34px">
+      <a class="reveal" href="/prestations" style="display:block;background:#fff;border:1px solid rgba(20,28,38,.12);border-top:4px solid #4A6274;border-radius:14px;padding:24px;text-decoration:none;color:inherit">
+        <h3 style="margin:0 0 8px">Prestations</h3>
+        <p style="margin:0;color:#5c6670;font-size:14.5px">Ingénierie, AMO, audits, pilotage, risques, sécurité incendie — les onze prestations, les secteurs et la démarche.</p>
+        <span style="display:inline-block;margin-top:12px;font-weight:700;color:#4A6274">Découvrir →</span>
+      </a>
+      <a class="reveal" href="/logiciels" style="display:block;background:#fff;border:1px solid rgba(20,28,38,.12);border-top:4px solid #D8B24A;border-radius:14px;padding:24px;text-decoration:none;color:inherit">
+        <h3 style="margin:0 0 8px">Logiciels métier</h3>
+        <p style="margin:0;color:#5c6670;font-size:14.5px">ONNOFF Expert SSI : registres, plans, commissions de sécurité. Formules et essai 7 jours.</p>
+        <span style="display:inline-block;margin-top:12px;font-weight:700;color:#8C6A2E">Découvrir →</span>
+      </a>
+      <a class="reveal" href="/a-propos" style="display:block;background:#fff;border:1px solid rgba(20,28,38,.12);border-top:4px solid #5F7048;border-radius:14px;padding:24px;text-decoration:none;color:inherit">
+        <h3 style="margin:0 0 8px">À propos</h3>
+        <p style="margin:0;color:#5c6670;font-size:14.5px">La mission en cours, nos engagements, et les réponses aux questions fréquentes.</p>
+        <span style="display:inline-block;margin-top:12px;font-weight:700;color:#5F7048">Découvrir →</span>
+      </a>
     </div>
   </div>
 </section>
 
-<section class="formules" id="formules-expert" style="padding:20px 0 90px">
-  <div class="wrap">
-    <div class="sec-head">
-      <span class="eyebrow">ONNOFF Expert — formules</span>
-      <h2>Choisissez votre formule</h2>
-      <p>Prix affichés, sans devis. Chaque formule ouvre les modules du niveau inférieur. Les 7 premiers jours sont gratuits, l'abonnement est résiliable à tout moment.</p>
-    </div>
 
-    <div class="inclus-bandeau">
-      <h3>Ce qui est inclus dans toutes les formules</h3>
-      <ul>
-        <li><b>Aucun module en option.</b> Tout le périmètre de votre formule est ouvert. Ailleurs, chaque module supplémentaire se facture couramment 90 à 120 € de plus par mois.</li>
-        <li><b>Opérationnel le jour même.</b> DUERP, processus, procédures, fiches de poste, organigramme et indicateurs arrivent pré-remplis. Pas de paramétrage préalable, pas de projet de déploiement.</li>
-        <li><b>Prix affiché, souscription en ligne.</b> Ni devis, ni rendez-vous commercial, ni frais de mise en service.</li>
-        <li><b>Hébergement en France</b>, sauvegardes et mises à jour réglementaires compris.</li>
-        <li><b>Espace cloisonné</b> : vos données ne côtoient celles d'aucun autre abonné.</li>
-        <li><b>Rappel quotidien par e-mail</b> des échéances dues et des retards.</li>
-        <li><b>Vos données restent les vôtres</b> : export PDF de tous les livrables, récupération à tout moment.</li>
-        <li><b>7 jours d'essai</b>, résiliable en un clic depuis votre espace.</li>
-      </ul>
-    </div>
 
-    <div class="periode-switch" role="group" aria-label="Périodicité de facturation">
-      <button type="button" class="periode-btn is-on" data-periode="mensuel" aria-pressed="true">Mensuel</button>
-      <button type="button" class="periode-btn" data-periode="annuel" aria-pressed="false">Annuel <span style="color:var(--red)">— 2 mois offerts</span></button>
-    </div>
 
-    <div class="formule-grid">
-      <article class="formule">
-        <h3>Essentiel</h3>
-        <p class="formule-cible">TPE, un seul site</p>
-        <div class="formule-prix"><b data-prix="essentiel">79&nbsp;€</b><span data-suffixe> /mois HT</span></div>
-        <p class="formule-postes">3 postes inclus · +15&nbsp;€/poste</p>
-        <ul>
-          <li><b>DUERP</b> : unités de travail, cotation, mise à jour annuelle, export PDF opposable</li>
-          <li><b>Cartographie des risques</b> : criticité gravité × probabilité, matrice, plan de maîtrise</li>
-          <li><b>Plan d'action</b> : responsable, échéance, relance automatique des retards</li>
-          <li><b>Événements AT/MP</b> : déclaration, analyse de cause, suivi des arrêts</li>
-          <li><b>Signalement terrain par QR code</b> — le déclarant n'a besoin d'aucun compte, photo à l'appui, depuis son téléphone</li>
-          <li><b>Documents &amp; procédures</b> : versions, diffusion, revue périodique</li>
-        </ul>
-        <button type="button" class="btn btn-ghost formule-cta" data-plan="essentiel">Essayer 7 jours →</button>
-      </article>
 
-      <article class="formule is-mise-en-avant">
-        <span class="formule-badge">Le plus choisi</span>
-        <h3>Qualité</h3>
-        <p class="formule-cible">PME certifiée ISO 9001 / 45001</p>
-        <div class="formule-prix"><b data-prix="qualite">149&nbsp;€</b><span data-suffixe> /mois HT</span></div>
-        <p class="formule-postes">10 postes inclus · +15&nbsp;€/poste</p>
-        <ul>
-          <li><b>Tout Essentiel</b>, plus :</li>
-          <li><b>Audits qualité</b> : grilles par référentiel (ISO 9001, 45001…), constats, rapport PDF généré</li>
-          <li><b>Non-conformités</b> : curatif, correctif, préventif et vérification d'efficacité</li>
-          <li><b>Diagnostics guidés</b> : auto-évaluation et score de maturité par thème</li>
-          <li><b>Processus</b> : pilotes, entrées/sorties, interactions</li>
-          <li><b>Équipements</b> : vérifications réglementaires et alertes d'échéance</li>
-          <li><b>Indicateurs</b> : objectif, seuil d'alerte, historique et courbes</li>
-          <li><b>Performance QCDS</b> : management visuel Qualité, Coûts, Délais, Sécurité</li>
-          <li><b>Certifications</b> : échéances, preuves, préparation d'audit</li>
-        </ul>
-        <button type="button" class="btn btn-primary formule-cta" data-plan="qualite">Essayer 7 jours →</button>
-      </article>
 
-      <article class="formule">
-        <h3>Expert</h3>
-        <p class="formule-cible">Service QHSE, multi-sites</p>
-        <div class="formule-prix"><b data-prix="expert">299&nbsp;€</b><span data-suffixe> /mois HT</span></div>
-        <p class="formule-postes">25 postes inclus · +15&nbsp;€/poste</p>
-        <ul>
-          <li><b>Tout Qualité</b>, plus :</li>
-          <li><b>Audit interne</b> : univers d'audit par le risque, missions, constats, suivi des recommandations</li>
-          <li><b>Veille réglementaire</b> : textes applicables, analyse d'impact, preuve de conformité</li>
-          <li><b>RGPD</b> : registre des traitements, durées de conservation</li>
-          <li><b>21 CFR Part 11</b> : signature manuscrite avec sens de signature, journal d'audit inaltérable</li>
-          <li><b>Maîtrise des modifications</b> et circuit de validation avec relances</li>
-          <li><b>Compétences</b> : fiches de poste, profils, écarts</li>
-          <li><b>Aptitudes &amp; habilitations</b> : expirations suivies, alerte à 60 jours</li>
-          <li><b>Organigramme</b> et planning consolidé des échéances</li>
-          <li><b>Devis &amp; factures</b> : numérotation, Factur-X, e-facturation via PDP</li>
-          <li><b>Radioprotection</b> : doses par catégorie, alerte au seuil des 80 %</li>
-          <li><b>Rapport de direction</b> : synthèse QHSE d'une page, prête pour le comité</li>
-        </ul>
-        <button type="button" class="btn btn-ghost formule-cta" data-plan="expert">Essayer 7 jours →</button>
-      </article>
 
-      <article class="formule">
-        <h3>Cabinet</h3>
-        <p class="formule-cible">Cabinets de conseil, groupes multi-entités</p>
-        <div class="formule-prix"><b data-prix="cabinet">549&nbsp;€</b><span data-suffixe> /mois HT</span></div>
-        <p class="formule-postes">Postes illimités</p>
-        <ul>
-          <li><b>Tout Expert</b>, postes illimités, plus :</li>
-          <li><b>Multi-clients</b> : un dossier complet par organisation suivie, cloisonné et en marque blanche</li>
-          <li><b>Portail client</b> : vos clients consultent leurs propres livrables, sans voir ceux des autres</li>
-          <li><b>Missions</b> : cadrage, livrables, suivi des temps et rapports</li>
-          <li><b>AMO</b> : phases, jalons, situations de travaux, courriers, comptes rendus de chantier</li>
-          <li><b>Consolidation groupe</b> : tous les établissements suivis en un écran</li>
-          <li><b>Assistant IA</b> : cause racine, rédaction de constats et synthèses, avec plafond budgétaire</li>
-          <li><b>Import Excel</b> : reprise de l'existant sans ressaisie</li>
-          <li><b>Journal d'audit</b> inaltérable et supervision technique</li>
-        </ul>
-        <button type="button" class="btn btn-ghost formule-cta" data-plan="cabinet">Essayer 7 jours →</button>
-      </article>
-    </div>
 
-    <p class="formule-note">Tarifs HT, hors options. Le paiement est traité par Stripe — nous ne conservons aucune donnée bancaire. Besoin d'un volume particulier ou d'un déploiement sur mesure ? <a href="#contact">Parlons-en →</a></p>
-    <p class="formule-erreur" id="formule-erreur" role="alert" hidden></p>
-  </div>
-</section>
 
-<section class="services" id="prestations">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <h2>Prestations</h2>
-      <p>Sept domaines d'intervention, du conseil ponctuel à l'accompagnement de projet dans la durée.</p>
-    </div>
-    <div class="svc-grid reveal">
-      <div class="svc"><div class="num">01</div><h3>Ingénierie &amp; études techniques</h3><p>Conception, dimensionnement et formalisation : cahiers des charges, notes techniques, analyses fonctionnelles et comparatifs de solutions.</p><span class="plus">+</span><div class="svc-more"><ul><li>Cahier des charges fonctionnel et technique</li><li>Notes techniques et dimensionnement</li><li>Études comparatives de solutions (technique / coût / délai)</li><li>Dossiers de consultation des entreprises (DCE)</li><li>Suivi et validation des études d'exécution</li></ul><a class="svc-cta" href="#contact" onclick="event.stopPropagation()">Parlons-en →</a></div></div>
-      <div class="svc"><div class="num">02</div><h3>Assistance à maîtrise d'ouvrage</h3><p>Votre bras droit technique : rédaction du programme, choix des prestataires, contrôle de conformité et interface avec la maîtrise d'œuvre.</p><span class="plus">+</span><div class="svc-more"><ul><li>Définition du besoin et rédaction du programme</li><li>Analyse des offres et aide au choix des prestataires</li><li>Suivi de la conception et des travaux côté maître d'ouvrage</li><li>Contrôle de conformité aux exigences du programme</li><li>Assistance à la réception : OPR et levée des réserves</li></ul><a class="svc-cta" href="#contact" onclick="event.stopPropagation()">Parlons-en →</a></div></div>
-      <div class="svc"><div class="num">03</div><h3>Conseil &amp; audit</h3><p>Diagnostics, audits de conformité réglementaire et organisationnelle, rapports d'expertise assortis d'un plan d'actions priorisé.</p><span class="plus">+</span><div class="svc-more"><ul><li>Audit documentaire et visite de terrain</li><li>Évaluation de la conformité réglementaire et organisationnelle</li><li>Rapport d'expertise illustré et hiérarchisé</li><li>Plan d'actions priorisé, du quick-win au long terme</li><li>Restitution et accompagnement de la mise en œuvre</li></ul><a class="svc-cta" href="#contact" onclick="event.stopPropagation()">Parlons-en →</a></div></div>
-      <div class="svc"><div class="num">04</div><h3>Pilotage &amp; coordination de projets</h3><p>Chef de projet externalisé : planning, budget, coordination des intervenants, reporting et gestion des points de blocage.</p><span class="plus">+</span><div class="svc-more"><ul><li>Cadrage : périmètre, jalons, budget</li><li>Planification et tableaux de bord de suivi</li><li>Animation des réunions et coordination des intervenants</li><li>Anticipation des risques projet et déblocage des points durs</li><li>Reporting clair et régulier à la direction</li></ul><a class="svc-cta" href="#contact" onclick="event.stopPropagation()">Parlons-en →</a></div></div>
-      <div class="svc"><div class="num">05</div><h3>Analyse &amp; management des risques</h3><p>Cartographie et criticité des risques, DUERP, plans de prévention, plans de continuité d'activité et procédures de gestion de crise.</p><span class="plus">+</span><div class="svc-more"><ul><li>Identification et cartographie des risques</li><li>Cotation de la criticité (probabilité × gravité)</li><li>DUERP et plans de prévention</li><li>Plan de continuité d'activité (PCA)</li><li>Procédures de gestion de crise et exercices associés</li></ul><a class="svc-cta" href="#contact" onclick="event.stopPropagation()">Parlons-en →</a></div></div>
-      <div class="svc"><div class="num">06</div><h3>Sécurité, sûreté &amp; sécurité incendie</h3><p>Mise en conformité ERP / IGH, audits de sûreté, consignes et procédures, accompagnement des équipes.</p><span class="plus">+</span><div class="svc-more"><ul><li>Diagnostics de conformité ERP / IGH / Code du travail</li><li>Audits de sûreté et prévention de la malveillance</li><li>Consignes, plans et procédures de sécurité</li><li>Préparation et suivi des commissions de sécurité</li><li>Accompagnement et sensibilisation des équipes</li></ul><a class="svc-cta" href="#contact" onclick="event.stopPropagation()">Parlons-en →</a></div></div>
-      <div class="svc"><div class="num">07</div><h3>Expertises &amp; accompagnement</h3><p>Appui d'expert ponctuel ou dans la durée, avis technique, contre-expertise et accompagnement des mises en conformité.</p><span class="plus">+</span><div class="svc-more"><ul><li>Avis technique indépendant et argumenté</li><li>Contre-expertise sur dossier ou sur site</li><li>Appui dans les échanges avec bureaux de contrôle, assureurs, administrations</li><li>Accompagnement des mises en conformité jusqu'à la levée</li><li>Intervention ponctuelle ou dans la durée, selon le besoin</li></ul><a class="svc-cta" href="#contact" onclick="event.stopPropagation()">Parlons-en →</a></div></div>
-      <div class="svc"><div class="num">08</div><h3>Veille &amp; conformité réglementaire</h3><p>Suivi des évolutions normatives, anticipation des obligations et mise à jour de vos documents réglementaires.</p><span class="plus">+</span><div class="svc-more"><ul><li>Veille normative et réglementaire ciblée sur votre activité</li><li>Notes d'impact : ce qui change concrètement pour vous</li><li>Mise à jour de vos documents réglementaires</li><li>Échéancier de vos obligations périodiques</li><li>Alertes en cas d'évolution majeure</li></ul><a class="svc-cta" href="#contact" onclick="event.stopPropagation()">Parlons-en →</a></div></div>
-      <div class="svc"><div class="num">09</div><h3>Accompagnement des exploitants ERP / IGH</h3><p>Registre de sécurité, préparation des commissions de sécurité, suivi et levée des prescriptions.</p><span class="plus">+</span><div class="svc-more"><ul><li>Tenue et mise à jour du registre de sécurité</li><li>Préparation des commissions : dossier complet et visite à blanc</li><li>Suivi et levée des prescriptions</li><li>Planification des vérifications périodiques obligatoires</li><li>Interface avec bureaux de contrôle et organismes agréés</li></ul><a class="svc-cta" href="#contact" onclick="event.stopPropagation()">Parlons-en →</a></div></div>
-      <div class="svc"><div class="num">10</div><h3>Sensibilisation &amp; accompagnement des équipes</h3><p>Montée en compétence de vos équipes sur la prévention des risques et la sécurité au quotidien.</p><span class="plus">+</span><div class="svc-more"><ul><li>Ateliers de prévention adaptés à vos métiers</li><li>Sensibilisation incendie et évacuation</li><li>Développement d'une culture sécurité au quotidien</li><li>Supports pédagogiques sur-mesure</li><li>Accompagnement spécifique de l'encadrement</li></ul><a class="svc-cta" href="#contact" onclick="event.stopPropagation()">Parlons-en →</a></div></div>
-      <div class="svc"><div class="num">11</div><h3>Organisation, procédures &amp; qualité</h3><p>Structuration des process, rédaction de procédures et démarche d'amélioration continue.</p><span class="plus">+</span><div class="svc-more"><ul><li>Cartographie de vos processus</li><li>Rédaction de procédures et modes opératoires</li><li>Indicateurs et tableaux de bord</li><li>Démarche d'amélioration continue (PDCA)</li><li>Préparation aux audits et certifications</li></ul><a class="svc-cta" href="#contact" onclick="event.stopPropagation()">Parlons-en →</a></div></div>
-      <div class="svc" style="display:flex;flex-direction:column;justify-content:center">
-        <div class="num">→</div><h3 style="font-family:var(--sans);font-weight:500;font-size:1.1rem">Un besoin hors cadre&nbsp;?</h3>
-        <p>Chaque mission est cadrée sur-mesure. <a href="#contact" style="color:var(--red);border-bottom:1px solid var(--red)">Parlons-en →</a></p>
-      </div>
-    </div>
-  </div>
-</section>
 
-<section class="sectors" id="secteurs">
-  <div class="wrap reveal">
-    <div class="sec-head">
-      <h2>Secteurs d'intervention</h2>
-      <p>Une expertise mobilisable aussi bien dans le secteur public que privé.</p>
-    </div>
-    <div class="tag-cloud">
-      <span>Établissements recevant du public (ERP)</span>
-      <span>Immeubles de grande hauteur (IGH)</span>
-      <span>Collectivités &amp; secteur public</span>
-      <span>Bailleurs sociaux</span>
-      <span>Copropriétés &amp; syndics</span>
-      <span>Hôtellerie &amp; restauration</span>
-      <span>EHPAD &amp; médico-social</span>
-      <span>Établissements scolaires</span>
-      <span>Commerces &amp; centres commerciaux</span>
-      <span>Sites industriels</span>
-      <span>Logistique &amp; entrepôts</span>
-      <span>Tertiaire &amp; bureaux</span>
-    </div>
-  </div>
-</section>
 
-<section class="process" id="demarche">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <h2>Ma démarche</h2>
-      <p>Une méthode claire, des livrables concrets, zéro mauvaise surprise.</p>
-    </div>
-    <div class="proc-grid reveal">
-      <div class="step"><div class="n">01</div><h4>Écoute &amp; diagnostic</h4><p>Comprendre votre besoin réel et l'état des lieux de votre situation.</p></div>
-      <div class="step"><div class="n">02</div><h4>Cadrage &amp; devis</h4><p>Une proposition écrite, détaillée et chiffrée avant tout engagement.</p></div>
-      <div class="step"><div class="n">03</div><h4>Pilotage &amp; suivi</h4><p>Exécution de la mission, coordination et reporting régulier.</p></div>
-      <div class="step"><div class="n">04</div><h4>Livrables conformes</h4><p>Des documents exploitables et un plan d'actions priorisé.</p></div>
-    </div>
-  </div>
-</section>
 
-<section class="mission" id="mission" style="padding:90px 0 20px">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <h2>Mission en cours</h2>
-      <p>Des exemples concrets de notre façon de travailler, du besoin initial au déploiement — pour un organisme de formation professionnelle et un cabinet de coordination SSI.</p>
-    </div>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:26px;margin-top:44px" class="reveal">
-      <div style="background:var(--paper);border:1px solid var(--line);border-left:4px solid var(--red);padding:38px 36px">
-        <div style="font-family:var(--mono);font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:#fff;background:var(--red);display:inline-block;padding:.5em 1em;border-radius:30px;margin-bottom:18px">● Mission en cours</div>
-        <h3 style="font-family:var(--serif);font-weight:500;font-size:1.5rem;line-height:1.25;margin-bottom:14px">Ingénierie de certification<br>professionnelle <span style="color:var(--red)">RNCP</span></h3>
-        <p style="color:#3a3540;font-size:.98rem;margin-bottom:16px">Montage complet du dossier de certification RNCP d'un organisme de formation, jusqu'au dépôt auprès de France Compétences.</p>
-        <ul style="padding-left:1.1em;color:#3a3540;font-size:.93rem;line-height:1.6">
-          <li>Analyse du métier visé et construction du référentiel</li>
-          <li>Blocs de compétences et modalités d'évaluation</li>
-          <li>Constitution du dossier de recevabilité</li>
-          <li>Alignement sur les exigences France Compétences</li>
-        </ul>
-      </div>
-      <div style="background:var(--paper);border:1px solid var(--line);border-left:4px solid var(--red);padding:38px 36px">
-        <div style="font-family:var(--mono);font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:#fff;background:var(--red);display:inline-block;padding:.5em 1em;border-radius:30px;margin-bottom:18px">● Mission en cours</div>
-        <h3 style="font-family:var(--serif);font-weight:500;font-size:1.5rem;line-height:1.25;margin-bottom:14px">Application de gestion de<br><span style="color:var(--red)">centre de formation</span></h3>
-        <p style="color:#3a3540;font-size:.98rem;margin-bottom:16px">Conception sur-mesure de l'application qui pilote l'ensemble du centre de formation : sessions, stagiaires, planification et documents réglementaires. De l'idée au déploiement.</p>
-        <ul style="padding-left:1.1em;color:#3a3540;font-size:.93rem;line-height:1.6">
-          <li>Étude de faisabilité et analyse de l'existant</li>
-          <li>Cahier des charges co-construit avec le client</li>
-          <li>Développement itératif et validations régulières</li>
-          <li>Phase d'essais avant déploiement accompagné</li>
-        </ul>
-      </div>
-      <div style="background:var(--paper);border:1px solid var(--line);border-left:4px solid var(--red);padding:38px 36px">
-        <div style="font-family:var(--mono);font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:#fff;background:var(--red);display:inline-block;padding:.5em 1em;border-radius:30px;margin-bottom:18px">● Mission en cours</div>
-        <h3 style="font-family:var(--serif);font-weight:500;font-size:1.5rem;line-height:1.25;margin-bottom:14px">Application métier<br><span style="color:var(--red)">CC-SSI-PRO</span></h3>
-        <p style="color:#3a3540;font-size:.98rem;margin-bottom:16px">Réalisation de l'application de gestion d'un cabinet de coordination SSI — de l'étude du projet à la mise en service, aujourd'hui en cours.</p>
-        <ul style="padding-left:1.1em;color:#3a3540;font-size:.93rem;line-height:1.6">
-          <li>Étude de projet et analyse des besoins</li>
-          <li>Étude de faisabilité</li>
-          <li>Conception et développement de l'application</li>
-          <li>Tests avant déploiement et mise en service progressive</li>
-        </ul>
-      </div>
-    </div>
-    <div class="eng-grid reveal" style="margin-top:26px">
-      <div class="eng"><div class="k">Étape 1</div><h3>Étude de faisabilité</h3><p>Analyse du besoin, de l'existant et des contraintes — pour décider en connaissance de cause avant d'investir.</p></div>
-      <div class="eng"><div class="k">Étape 2</div><h3>Cahier des charges co-construit</h3><p>Rédigé avec le client, pas à sa place : périmètre, fonctionnalités, priorités et critères de réception partagés.</p></div>
-      <div class="eng"><div class="k">Étape 3</div><h3>Création &amp; essais</h3><p>Développement itératif avec des points de validation réguliers, puis phase d'essais en conditions réelles.</p></div>
-      <div class="eng"><div class="k">Étape 4</div><h3>Déploiement accompagné</h3><p>Mise en service progressive, prise en main des équipes et ajustements — jusqu'à l'autonomie complète.</p></div>
-    </div>
-  </div>
-</section>
 
-<section class="engagements" id="engagements" style="padding:90px 0 30px">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <h2>Nos engagements</h2>
-      <p>Ce que vous êtes en droit d'attendre de nous, sur chaque mission.</p>
-    </div>
-    <div class="eng-grid reveal">
-      <div class="eng"><div class="k">01 — Indépendance</div><h3>Un avis qui n'appartient qu'à vous</h3><p>Aucun lien commercial avec des installateurs ou des fournisseurs : nos recommandations ne servent que vos intérêts.</p></div>
-      <div class="eng"><div class="k">02 — Sur-mesure</div><h3>Des missions cadrées, sans superflu</h3><p>Chaque intervention est dimensionnée à votre besoin réel — du diagnostic ponctuel à l'accompagnement dans la durée.</p></div>
-      <div class="eng"><div class="k">03 — Clarté</div><h3>Des livrables actionnables</h3><p>Rapports hiérarchisés, plans d'actions priorisés, langage clair : vous savez toujours quoi faire, dans quel ordre, et pourquoi.</p></div>
-      <div class="eng"><div class="k">04 — Réactivité</div><h3>Un interlocuteur direct</h3><p>Pas de standard ni d'intermédiaire : vous échangez directement avec l'expert qui traite votre dossier.</p></div>
-    </div>
-  </div>
-</section>
 
-<section class="faq-section" id="faq" style="padding:60px 0 90px">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <h2>Questions fréquentes</h2>
-      <p>Les réponses aux questions que l'on nous pose le plus souvent.</p>
-    </div>
-    <div class="faq reveal">
-      <details><summary>Dans quelle zone intervenez-vous&nbsp;?</summary><div class="a">Nous sommes basés à Paris et intervenons partout en France. Pour les missions d'audit, d'expertise ou d'accompagnement documentaire, nous intervenons également à distance sur toute la France.</div></details>
-      <details><summary>Pour quels types de clients travaillez-vous&nbsp;?</summary><div class="a">Exploitants d'ERP et d'IGH, collectivités, entreprises industrielles et tertiaires, maîtres d'ouvrage publics ou privés — de l'établissement indépendant au site multi-bâtiments.</div></details>
-      <details><summary>Comment démarre une mission&nbsp;?</summary><div class="a">Un premier échange gratuit et sans engagement pour comprendre votre besoin. Nous vous adressons ensuite une proposition écrite : périmètre, livrables, délais et budget. La mission ne démarre qu'une fois ce cadre validé ensemble.</div></details>
-      <details><summary>Comment sont fixés vos tarifs&nbsp;?</summary><div class="a">Chaque mission fait l'objet d'un devis sur-mesure, au forfait ou à la journée selon la nature du besoin. Vous connaissez le budget exact avant de vous engager — sans surprise en cours de mission.</div></details>
-      <details><summary>Êtes-vous indépendants des installateurs et fournisseurs&nbsp;?</summary><div class="a">Oui, totalement. Nous ne vendons ni matériel ni installation : notre seule valeur ajoutée est le conseil. Nos préconisations sont donc guidées uniquement par votre intérêt, la réglementation et l'état de l'art.</div></details>
-      <details><summary>Pouvez-vous accompagner une commission de sécurité&nbsp;?</summary><div class="a">Oui : préparation du dossier, mise à jour du registre de sécurité, visite préparatoire « à blanc », assistance le jour de la commission et accompagnement jusqu'à la levée des éventuelles prescriptions.</div></details>
-    </div>
-  </div>
-</section>
 
 <section class="contact bgp-risques" id="contact">
   <div class="wrap reveal">
@@ -706,37 +176,12 @@ footer b{color:var(--paper);font-weight:500}
 </section>
 
 <!-- ===== MENTIONS LÉGALES ===== -->
-<section id="mentions-legales" style="background:var(--paper-2);border-top:1px solid var(--line)">
-  <div class="wrap" style="padding:56px 32px">
-    <p class="eyebrow">Mentions légales</p>
-    <div style="margin-top:18px;display:grid;gap:22px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));font-size:.88rem;color:var(--muted)">
-      <div>
-        <p style="color:var(--ink);font-weight:600;margin-bottom:6px">Éditeur du site</p>
-        <p><b style="color:var(--ink)">ONN/OFF Ingénierie</b> — entreprise individuelle<br>
-        SIRET&nbsp;804&nbsp;574&nbsp;218&nbsp;00066 (SIREN&nbsp;804&nbsp;574&nbsp;218)<br>
-        Code APE&nbsp;71.12B — Ingénierie, études techniques<br>
-        TVA non applicable, art.&nbsp;293&nbsp;B du CGI<br>
-        78 avenue des Champs-Élysées, Bureau 326, 75008 Paris, France</p>
-      </div>
-      <div>
-        <p style="color:var(--ink);font-weight:600;margin-bottom:6px">Contact &amp; publication</p>
-        <p>Tél.&nbsp;: <a href="tel:+33658522026" style="border-bottom:1px solid var(--line)">06&nbsp;58&nbsp;52&nbsp;20&nbsp;26</a><br>
-        E-mail&nbsp;: <a href="mailto:contact@xn--onn-offingnierie-kqb.fr" style="border-bottom:1px solid var(--line)">contact@onn-offingénierie.fr</a><br>
-        Directeur de la publication&nbsp;: le représentant légal d'ONN/OFF Ingénierie</p>
-      </div>
-      <div>
-        <p style="color:var(--ink);font-weight:600;margin-bottom:6px">Hébergement &amp; données</p>
-        <p>Site hébergé par Google&nbsp;Ireland&nbsp;Limited (Firebase&nbsp;Hosting) — Gordon&nbsp;House, Barrow&nbsp;Street, Dublin&nbsp;4, Irlande.<br>
-        Le formulaire de contact est traité par Formspree&nbsp;; les informations transmises ne servent qu'à répondre à votre demande et ne sont ni cédées ni utilisées à d'autres fins.</p>
-      </div>
-    </div>
-  </div>
-</section>
+
 
 <footer>
   <div class="wrap">
     <div><b>Onn·Off Ingénierie &amp; Conseil</b> — Paris, France</div>
-    <div>Auto-entreprise · TVA non applicable, art. 293 B du CGI · © 2026 · <a href="#mentions-legales" style="border-bottom:1px solid rgba(245,242,239,.3)">Mentions légales</a></div>
+    <div>Auto-entreprise · TVA non applicable, art. 293 B du CGI · © 2026 · <a href="/mentions-legales" style="border-bottom:1px solid rgba(245,242,239,.3)">Mentions légales</a></div>
   </div>
 </footer>
 
@@ -745,6 +190,7 @@ const obs=new IntersectionObserver((entries)=>{
   entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target)}});
 },{threshold:.12});
 document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+setTimeout(()=>document.querySelectorAll('.reveal:not(.in)').forEach(el=>el.classList.add('in')),1400);
 
 // Carrousel de fond : rotation douce des photos
 (function(){
@@ -778,78 +224,7 @@ document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
 })();
 </script>
 
-<script>
-/* Formules ONNOFF Expert : bascule mensuel/annuel et souscription Stripe.
-   Le prix annuel vaut 10 mois (2 mois offerts) ; les mêmes valeurs sont
-   définies dans lib/features/abonnement/domain/plan.dart et dans la Cloud
-   Function creerCheckout, qui reste seule juge du montant facturé. */
-(function(){
-  var CHECKOUT_URL = 'https://europe-west1-onnoff-expert.cloudfunctions.net/creerCheckout';
-  var PRIX = { essentiel:79, qualite:149, expert:299, cabinet:549 };
-  var periode = 'mensuel';
 
-  function euros(n){ return n.toLocaleString('fr-FR') + ' €'; }
-
-  function majPrix(){
-    Object.keys(PRIX).forEach(function(plan){
-      var el = document.querySelector('[data-prix="' + plan + '"]');
-      if(el) el.innerHTML = euros(periode === 'annuel' ? PRIX[plan] * 10 : PRIX[plan]);
-    });
-    document.querySelectorAll('[data-suffixe]').forEach(function(el){
-      el.textContent = periode === 'annuel' ? ' /an HT' : ' /mois HT';
-    });
-  }
-
-  document.querySelectorAll('.periode-btn').forEach(function(btn){
-    btn.addEventListener('click', function(){
-      periode = btn.dataset.periode;
-      document.querySelectorAll('.periode-btn').forEach(function(b){
-        var on = b === btn;
-        b.classList.toggle('is-on', on);
-        b.setAttribute('aria-pressed', on ? 'true' : 'false');
-      });
-      majPrix();
-    });
-  });
-
-  var erreur = document.getElementById('formule-erreur');
-  function afficherErreur(msg){
-    if(!erreur) return;
-    erreur.textContent = msg;
-    erreur.hidden = false;
-  }
-
-  document.querySelectorAll('.formule-cta').forEach(function(btn){
-    btn.addEventListener('click', function(){
-      var libelle = btn.textContent;
-      btn.disabled = true;
-      btn.textContent = 'Redirection vers le paiement…';
-      if(erreur) erreur.hidden = true;
-
-      fetch(CHECKOUT_URL, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ plan: btn.dataset.plan, periodicite: periode })
-      })
-      .then(function(r){
-        if(!r.ok) throw new Error('HTTP ' + r.status);
-        return r.json();
-      })
-      .then(function(data){
-        if(!data || !data.url) throw new Error('URL de paiement absente');
-        window.location.href = data.url;
-      })
-      .catch(function(){
-        btn.disabled = false;
-        btn.textContent = libelle;
-        afficherErreur("La souscription en ligne est momentanément indisponible. Écrivez-nous via le formulaire de contact et nous ouvrons votre espace manuellement.");
-      });
-    });
-  });
-
-  majPrix();
-})();
-</script>
 <a class="cta-float" href="#contact">Discuter de votre projet →</a>
 </body>
 </html>

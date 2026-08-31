@@ -5,6 +5,7 @@
     "ignore": [
       "firebase.json",
       ".firebaserc",
+      "decouper.js",
       "**/.*",
       "**/node_modules/**",
       "**/*.bak",
